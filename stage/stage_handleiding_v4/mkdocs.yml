@@ -1,6 +1,6 @@
 site_name: E-Ink Display IoT System - Internship Documentation
 site_description: Complete setup and maintenance guide for the wind turbine monitoring e-ink display system
-site_author: Your Name
+site_author: Kieran Julie
 
 theme:
   name: material
