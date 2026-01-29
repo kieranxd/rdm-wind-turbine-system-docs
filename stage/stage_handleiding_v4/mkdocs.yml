@@ -1,0 +1,63 @@
+site_name: E-Ink Display IoT System - Internship Documentation
+site_description: Complete setup and maintenance guide for the wind turbine monitoring e-ink display system
+site_author: Your Name
+
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Architecture:
+      - System Overview: architecture/overview.md
+      - Data Flow: architecture/data-flow.md
+  - Infrastructure Setup:
+      - Proxmox Host: infrastructure/proxmox.md
+      - VM Configuration: infrastructure/vm-setup.md
+      - IOTstack Installation: infrastructure/iotstack.md
+  - Docker Services:
+      - InfluxDB: services/influxdb.md
+      - Grafana: services/grafana.md
+      - Grafana Image Renderer: services/grafana-renderer.md
+      - Node-RED: services/node-red.md
+      - Portainer: services/portainer.md
+  - Raspberry Pi:
+      - Gadget Mode Setup: raspberry-pi/gadget-mode.md
+      - Shell Scripts: raspberry-pi/scripts.md
+      - SSH Configuration: raspberry-pi/ssh-setup.md
+  - Hardware:
+      - Network Topology: hardware/network.md
+      - PoE Setup: hardware/poe.md
+      - Samsung E-Ink Display: hardware/display.md
+  - Maintenance:
+      - Regular Tasks: maintenance/regular-tasks.md
+      - Troubleshooting: maintenance/troubleshooting.md
+      - Backup & Restore: maintenance/backup.md
+  - Appendix:
+      - Configuration Files: appendix/configs.md
+      - References: appendix/references.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
