@@ -1,0 +1,370 @@
+[
+    {
+        "id": "a5cb919169520b3f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "17529d65764f7022",
+        "type": "inject",
+        "z": "a5cb919169520b3f",
+        "name": "loop turbine_data",
+        "props": [],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "73df0b796992aeb6"
+            ]
+        ]
+    },
+    {
+        "id": "df38e24f64405aa8",
+        "type": "function",
+        "z": "a5cb919169520b3f",
+        "name": "parse_data",
+        "func": "// Extract data from API response\nlet data = msg.payload;\nlet weather = data.liveweer[0];\n\n// Temperature and humidity\nlet T = weather.temp;\nlet RH = weather.lv;\n\n// Air density calculation\nlet P = weather.luchtd * 100; // convert hPa → Pa\nlet R = 287;                   // J/(kg·K)\nlet T_K = T + 273.15;\nlet air_density = P / (R * T_K);\n\n// Create InfluxDB point\nmsg.payload = [\n  {\n    measurement: \"weather\",\n    tags: {\n      location: weather.plaats || \"Unknown\",\n    },\n    fields: {\n      temperature_C: T,\n      humidity: RH,\n      wind_speed_kmh: weather.windkmh,\n      wind_speed_ms: weather.windms,\n      wind_speed_kn: weather.windknp,\n      wind_bft: weather.windbft,\n      wind_direction: weather.windr,\n      wind_direction_deg: weather.windrgr,\n      air_pressure_hPa: weather.luchtd,\n      dew_point_C: T - ((100 - RH) / 5),\n      air_density: air_density,\n      visibility_m: weather.zicht,\n      summary: weather.samenv\n    },\n    timestamp: weather.timestamp * 1000000000 // ns for InfluxDB\n  }\n];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 320,
+        "wires": [
+            [
+                "89c1dd6d61f701f1",
+                "4f14d51899888aeb"
+            ]
+        ]
+    },
+    {
+        "id": "89c1dd6d61f701f1",
+        "type": "debug",
+        "z": "a5cb919169520b3f",
+        "name": "weather_data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "4f14d51899888aeb",
+        "type": "influxdb batch",
+        "z": "a5cb919169520b3f",
+        "influxdb": "050947206afe146e",
+        "precision": "",
+        "retentionPolicy": "",
+        "name": "POST TO INFLUXDB",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1080,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c03530ef2e3a1643",
+        "type": "xml",
+        "z": "a5cb919169520b3f",
+        "name": "parse xml",
+        "property": "payload",
+        "attr": "",
+        "chr": "",
+        "x": 620,
+        "y": 220,
+        "wires": [
+            [
+                "b368d23b908921a2"
+            ]
+        ]
+    },
+    {
+        "id": "b368d23b908921a2",
+        "type": "function",
+        "z": "a5cb919169520b3f",
+        "name": "parse_data",
+        "func": "let rows = msg.payload.data.r;\nlet fields = {};\n\n// Helper: convert raw names → snake_case + prefix\nfunction sanitize(name) {\n    // Replace symbols with underscores\n    let clean = name.replace(/[^a-zA-Z0-9]/g, \"_\");\n\n    // Collapse double underscores\n    clean = clean.replace(/__+/g, \"_\");\n\n    clean = clean.toLowerCase();\n\n    // Prefixing rules\n    if (name.startsWith(\"S6_\") || name.startsWith(\"S5_\") || name.startsWith(\"S2_\")) {\n        return \"grid_\" + clean;\n    }\n\n    if (name.startsWith(\"IM_\")) {\n        return \"orientation_\" + clean.replace(\"im_\", \"\");\n    }\n\n    if (name.startsWith(\"VM_\")) {\n        return \"vibration_\" + clean.replace(\"vm_\", \"\");\n    }\n\n    return clean;\n}\n\n// Parse fields\nrows.forEach(r => {\n    let originalName = r.$.n;\n    let value = parseFloat(r.i[0]);\n    let safeName = sanitize(originalName);\n    fields[safeName] = value;\n});\n\n// Build InfluxDB v1 point\nmsg.payload = [\n    {\n        measurement: \"turbine\",\n        tags: {\n            source: \"rdm_windturbine\"\n        },\n        fields: fields,\n        // optional timestamp, otherwise Influx uses \"now\"\n        // timestamp: Date.now() * 1000000\n    }\n];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 220,
+        "wires": [
+            [
+                "a798590d5bbaba4f",
+                "4f14d51899888aeb"
+            ]
+        ]
+    },
+    {
+        "id": "a798590d5bbaba4f",
+        "type": "debug",
+        "z": "a5cb919169520b3f",
+        "name": "turbine_data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "905f23a642b00308",
+        "type": "inject",
+        "z": "a5cb919169520b3f",
+        "name": "loop_weather_data",
+        "props": [],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 120,
+        "y": 320,
+        "wires": [
+            [
+                "f97f052843c37314"
+            ]
+        ]
+    },
+    {
+        "id": "f91b957a26b4b05b",
+        "type": "inject",
+        "z": "a5cb919169520b3f",
+        "name": "loop_image_renderer",
+        "props": [],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 440,
+        "wires": [
+            [
+                "2f6f9a831b647073"
+            ]
+        ]
+    },
+    {
+        "id": "2f6f9a831b647073",
+        "type": "http request",
+        "z": "a5cb919169520b3f",
+        "name": "Request image from renderer",
+        "method": "GET",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "http://145.24.180.60:3000/render/d/ad5v9hp?orgId=1&from=now-1h&to=now&timezone=browser&height=1440&width=2560&scale=1&kiosk=true&hideNav=true&fullPageImage=true",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "bearer",
+        "senderr": false,
+        "headers": [],
+        "x": 420,
+        "y": 440,
+        "wires": [
+            [
+                "5c2a516a4323b06e"
+            ]
+        ]
+    },
+    {
+        "id": "5c2a516a4323b06e",
+        "type": "file",
+        "z": "a5cb919169520b3f",
+        "name": "Write to temporary file",
+        "filename": "/tmp/001.png",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 740,
+        "y": 440,
+        "wires": [
+            [
+                "6447b4de8d54758e"
+            ]
+        ]
+    },
+    {
+        "id": "6447b4de8d54758e",
+        "type": "exec",
+        "z": "a5cb919169520b3f",
+        "command": "scp /tmp/001.png hrtech@100.115.49.36:/home/hrtech/incoming_images/incoming.png",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Copy image to rPi",
+        "x": 1070,
+        "y": 500,
+        "wires": [
+            [
+                "954ed93bc26644d3"
+            ],
+            [
+                "bab62db1342e303c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "954ed93bc26644d3",
+        "type": "exec",
+        "z": "a5cb919169520b3f",
+        "command": "ssh hrtech@100.115.49.36 \"sudo /home/hrtech/refresh_script.sh\"",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Execute image refresh",
+        "x": 1340,
+        "y": 500,
+        "wires": [
+            [],
+            [
+                "cde79b423d6df010"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bab62db1342e303c",
+        "type": "debug",
+        "z": "a5cb919169520b3f",
+        "name": "Errors SCP",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1310,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "cde79b423d6df010",
+        "type": "debug",
+        "z": "a5cb919169520b3f",
+        "name": "Errors Refresh",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1600,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "73df0b796992aeb6",
+        "type": "http request",
+        "z": "a5cb919169520b3f",
+        "name": "Request turbine data",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://egauge84432.egaug.es/cgi-bin/egauge?inst",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "digest",
+        "senderr": false,
+        "headers": [],
+        "x": 400,
+        "y": 220,
+        "wires": [
+            [
+                "c03530ef2e3a1643"
+            ]
+        ]
+    },
+    {
+        "id": "f97f052843c37314",
+        "type": "http request",
+        "z": "a5cb919169520b3f",
+        "name": "Request weather data",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://weerlive.nl/api/weerlive_api_v2.php?key=3c2224ecab&locatie=51.89908,4.42348",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 400,
+        "y": 320,
+        "wires": [
+            [
+                "df38e24f64405aa8"
+            ]
+        ]
+    },
+    {
+        "id": "050947206afe146e",
+        "type": "influxdb",
+        "hostname": "145.24.180.60",
+        "port": 8086,
+        "protocol": "http",
+        "database": "TURBINE_DATA",
+        "name": "influxIOT",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "5e82f2511c2739e9",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-influxdb": "0.7.0"
+        }
+    }
+]

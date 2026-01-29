@@ -1,0 +1,46 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# MkDocs build output
+site/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Sensitive configuration files (if you create any with real credentials)
+# Uncomment these if you create files with actual secrets:
+# .env
+# secrets.yaml
+# credentials.json
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
