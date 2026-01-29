@@ -1,0 +1,2849 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete setup and maintenance guide for the wind turbine monitoring e-ink display system">
+      
+      
+        <meta name="author" content="Your Name">
+      
+      
+      
+        <link rel="prev" href="../../hardware/display/">
+      
+      
+        <link rel="next" href="../troubleshooting/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Regular Tasks - E-Ink Display IoT System - Internship Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#regular-maintenance-tasks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-header__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            E-Ink Display IoT System - Internship Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Regular Tasks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../infrastructure/proxmox/" class="md-tabs__link">
+          
+  
+  
+  Infrastructure Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../services/influxdb/" class="md-tabs__link">
+          
+  
+  
+  Docker Services
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../raspberry-pi/gadget-mode/" class="md-tabs__link">
+          
+  
+  
+  Raspberry Pi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/network/" class="md-tabs__link">
+          
+  
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Maintenance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/configs/" class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-nav__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    E-Ink Display IoT System - Internship Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infrastructure Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/proxmox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox Host
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/vm-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VM Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/iotstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IOTstack Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docker Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/influxdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InfluxDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana-renderer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana Image Renderer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/node-red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node-RED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/portainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Raspberry Pi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/gadget-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gadget Mode Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/ssh-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Topology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/poe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PoE Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Samsung E-Ink Display
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maintenance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Tasks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#daily-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Daily Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitor-system-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor System Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weekly-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weekly Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Weekly Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-disk-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Disk Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Raspberry Pi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-tailscale-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Tailscale Connectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monthly-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monthly Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Docker Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-raspberry-pi-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Raspberry Pi OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-proxmox-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Proxmox Host
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-docker-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clean Docker System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-influxdb-database-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check InfluxDB Database Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refresh-e-ink-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refresh E-Ink Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quarterly-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quarterly Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quarterly Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yearly-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yearly Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Yearly Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-system-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full System Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disaster-recovery-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disaster Recovery Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacity-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capacity Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmware-and-software-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firmware and Software Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-slauptime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review SLA/Uptime
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-calendar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Calendar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automation-opportunities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation Opportunities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automation Opportunities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automated-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escalation-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalation Procedures
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendix
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/configs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#daily-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Daily Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitor-system-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor System Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weekly-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weekly Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Weekly Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-disk-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Disk Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Raspberry Pi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-tailscale-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Tailscale Connectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monthly-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monthly Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-docker-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Docker Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-raspberry-pi-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Raspberry Pi OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-proxmox-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Proxmox Host
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-docker-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clean Docker System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-influxdb-database-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check InfluxDB Database Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refresh-e-ink-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refresh E-Ink Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quarterly-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quarterly Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quarterly Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yearly-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yearly Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Yearly Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-system-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full System Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disaster-recovery-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disaster Recovery Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacity-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capacity Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmware-and-software-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firmware and Software Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-slauptime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review SLA/Uptime
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-calendar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Calendar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automation-opportunities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation Opportunities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automation Opportunities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automated-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escalation-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalation Procedures
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="regular-maintenance-tasks">Regular Maintenance Tasks<a class="headerlink" href="#regular-maintenance-tasks" title="Permanent link">&para;</a></h1>
+<p>This guide outlines routine maintenance to keep the system running smoothly.</p>
+<h2 id="daily-tasks">Daily Tasks<a class="headerlink" href="#daily-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="monitor-system-status">Monitor System Status<a class="headerlink" href="#monitor-system-status" title="Permanent link">&para;</a></h3>
+<p><strong>Check Grafana Dashboard</strong></p>
+<ol>
+<li>Navigate to <code>http://&lt;vm_ip&gt;:3000</code></li>
+<li>Verify dashboard is displaying current data</li>
+<li>Check for data gaps or anomalies</li>
+</ol>
+<p><strong>Check E-Ink Display</strong></p>
+<ol>
+<li>Verify display shows latest image</li>
+<li>Check image quality and clarity</li>
+<li>Ensure refresh is occurring</li>
+</ol>
+<p><strong>Quick Health Check</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># SSH to VM</span>
+ssh<span class="w"> </span>&lt;vm_username&gt;@&lt;vm_ip&gt;
+
+<span class="c1"># Check all containers</span>
+<span class="nb">cd</span><span class="w"> </span>~/IOTstack
+docker<span class="w"> </span>compose<span class="w"> </span>ps
+</code></pre></div>
+<p>All should show "Up" status.</p>
+<h2 id="weekly-tasks">Weekly Tasks<a class="headerlink" href="#weekly-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="review-logs">Review Logs<a class="headerlink" href="#review-logs" title="Permanent link">&para;</a></h3>
+<p><strong>Node-RED Logs</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--tail<span class="o">=</span><span class="m">100</span><span class="w"> </span>nodered
+</code></pre></div>
+<p>Look for:</p>
+<ul>
+<li>HTTP request errors</li>
+<li>InfluxDB write failures</li>
+<li>SSH/SCP errors</li>
+</ul>
+<p><strong>Grafana Logs</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--tail<span class="o">=</span><span class="m">100</span><span class="w"> </span>grafana
+</code></pre></div>
+<p>Look for:</p>
+<ul>
+<li>Render errors</li>
+<li>Data source issues</li>
+</ul>
+<p><strong>InfluxDB Logs</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--tail<span class="o">=</span><span class="m">100</span><span class="w"> </span>influxdb
+</code></pre></div>
+<p>Look for:</p>
+<ul>
+<li>Memory warnings</li>
+<li>Write errors</li>
+</ul>
+<h3 id="check-disk-space">Check Disk Space<a class="headerlink" href="#check-disk-space" title="Permanent link">&para;</a></h3>
+<p><strong>On VM:</strong></p>
+<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h
+</code></pre></div>
+<p>Ensure root partition has &gt;20% free.</p>
+<p><strong>Docker Volumes:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>system<span class="w"> </span>df
+</code></pre></div>
+<p>Shows Docker disk usage.</p>
+<h3 id="verify-backups">Verify Backups<a class="headerlink" href="#verify-backups" title="Permanent link">&para;</a></h3>
+<p>Check that automated backups are running:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Proxmox backups</span>
+ls<span class="w"> </span>-lh<span class="w"> </span>/path/to/backup/directory/
+
+<span class="c1"># IOTstack backups</span>
+ls<span class="w"> </span>-lh<span class="w"> </span>~/IOTstack/backups/
+</code></pre></div>
+<h3 id="check-raspberry-pi">Check Raspberry Pi<a class="headerlink" href="#check-raspberry-pi" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;
+
+<span class="c1"># Disk space</span>
+df<span class="w"> </span>-h
+
+<span class="c1"># Temperature</span>
+vcgencmd<span class="w"> </span>measure_temp
+
+<span class="c1"># Throttling</span>
+vcgencmd<span class="w"> </span>get_throttled
+</code></pre></div>
+<p>Output <code>0x0</code> means no issues.</p>
+<h3 id="check-tailscale-connectivity">Check Tailscale Connectivity<a class="headerlink" href="#check-tailscale-connectivity" title="Permanent link">&para;</a></h3>
+<p><strong>Verify VM Tailscale status:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># If using Docker</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tailscale<span class="w"> </span>tailscale<span class="w"> </span>status
+
+<span class="c1"># If native install</span>
+sudo<span class="w"> </span>tailscale<span class="w"> </span>status
+</code></pre></div>
+<p><strong>Verify Pi connectivity via Tailscale:</strong></p>
+<div class="highlight"><pre><span></span><code>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">4</span><span class="w"> </span>&lt;pi_tailscale_ip&gt;
+</code></pre></div>
+<p><strong>Test SSH over Tailscale:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;echo OK&#39;</span>
+</code></pre></div>
+<p>Should return "OK" without errors.</p>
+<h2 id="monthly-tasks">Monthly Tasks<a class="headerlink" href="#monthly-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="update-docker-images">Update Docker Images<a class="headerlink" href="#update-docker-images" title="Permanent link">&para;</a></h3>
+<p><strong>Pull Latest Images:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/IOTstack
+docker<span class="w"> </span>compose<span class="w"> </span>pull
+</code></pre></div>
+<p><strong>Apply Updates:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<p>Containers will be recreated with new images.</p>
+<p><strong>Verify:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>ps
+docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>-f
+</code></pre></div>
+<p>Check for errors after update.</p>
+<h3 id="update-raspberry-pi-os">Update Raspberry Pi OS<a class="headerlink" href="#update-raspberry-pi-os" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+sudo<span class="w"> </span>reboot
+</code></pre></div>
+<p>Wait for reboot, verify services:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;
+systemctl<span class="w"> </span>status<span class="w"> </span>usb-gadget
+sudo<span class="w"> </span>tailscale<span class="w"> </span>status
+</code></pre></div>
+<h3 id="update-proxmox-host">Update Proxmox Host<a class="headerlink" href="#update-proxmox-host" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>root@&lt;proxmox-ip&gt;
+apt<span class="w"> </span>update
+apt<span class="w"> </span>dist-upgrade<span class="w"> </span>-y
+</code></pre></div>
+<p>Reboot if kernel updated.</p>
+<h3 id="clean-docker-system">Clean Docker System<a class="headerlink" href="#clean-docker-system" title="Permanent link">&para;</a></h3>
+<p>Remove unused images and containers:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/IOTstack
+docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"> </span>-f
+</code></pre></div>
+<p>For more aggressive cleanup (removes all unused data):</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"> </span>-a<span class="w"> </span>--volumes<span class="w"> </span>-f
+</code></pre></div>
+<p><strong>Warning:</strong> This removes all unused volumes. Backup first.</p>
+<h3 id="check-influxdb-database-size">Check InfluxDB Database Size<a class="headerlink" href="#check-influxdb-database-size" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>du<span class="w"> </span>-sh<span class="w"> </span>/var/lib/influxdb
+</code></pre></div>
+<p>If size is concerning, consider:</p>
+<ul>
+<li>Implementing retention policy</li>
+<li>Downsampling old data</li>
+<li>Archiving to external storage</li>
+</ul>
+<h3 id="refresh-e-ink-display">Refresh E-Ink Display<a class="headerlink" href="#refresh-e-ink-display" title="Permanent link">&para;</a></h3>
+<p>Prevent ghosting:</p>
+<ol>
+<li>Access display menu</li>
+<li>Settings → Display → Screen Refresh</li>
+<li>Run full refresh cycle</li>
+</ol>
+<h3 id="test-backups">Test Backups<a class="headerlink" href="#test-backups" title="Permanent link">&para;</a></h3>
+<p>Periodically test backup restoration:</p>
+<ol>
+<li>Restore a Proxmox VM backup to test VM</li>
+<li>Verify services start correctly</li>
+<li>Delete test VM after verification</li>
+</ol>
+<h2 id="quarterly-tasks">Quarterly Tasks<a class="headerlink" href="#quarterly-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="review-security">Review Security<a class="headerlink" href="#review-security" title="Permanent link">&para;</a></h3>
+<p><strong>Update Passwords:</strong></p>
+<ul>
+<li>Grafana admin password</li>
+<li>Node-RED password</li>
+<li>SSH keys (rotate if policy requires)</li>
+</ul>
+<p><strong>Review Access Logs:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># On VM</span>
+sudo<span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;Failed password&#39;</span><span class="w"> </span>/var/log/auth.log
+
+<span class="c1"># On Raspberry Pi</span>
+ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;
+sudo<span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;Failed password&#39;</span><span class="w"> </span>/var/log/auth.log
+</code></pre></div>
+<p><strong>Check Tailscale Admin Console:</strong></p>
+<ol>
+<li>Log in to <a href="https://login.tailscale.com/admin/machines">Tailscale admin console</a></li>
+<li>Review connected devices</li>
+<li>Check for unauthorized devices</li>
+<li>Review access logs and activity</li>
+<li>Verify authentication keys are current</li>
+</ol>
+<p><strong>Update Firewall Rules:</strong></p>
+<p>Review and update as needed:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>status<span class="w"> </span>numbered
+</code></pre></div>
+<h3 id="performance-review">Performance Review<a class="headerlink" href="#performance-review" title="Permanent link">&para;</a></h3>
+<p><strong>InfluxDB Queries:</strong></p>
+<p>Check query performance in Grafana. Slow queries may need optimization.</p>
+<p><strong>Node-RED Flow:</strong></p>
+<p>Review flow for inefficiencies:</p>
+<ul>
+<li>Unnecessary nodes</li>
+<li>Debug nodes left active</li>
+<li>Excessive logging</li>
+</ul>
+<p><strong>Resource Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>stats<span class="w"> </span>--no-stream
+</code></pre></div>
+<p>Note high CPU or memory usage.</p>
+<h3 id="documentation-review">Documentation Review<a class="headerlink" href="#documentation-review" title="Permanent link">&para;</a></h3>
+<p>Update this documentation with:</p>
+<ul>
+<li>Configuration changes</li>
+<li>New issues discovered</li>
+<li>Workarounds implemented</li>
+<li>Contact information updates</li>
+</ul>
+<h3 id="hardware-inspection">Hardware Inspection<a class="headerlink" href="#hardware-inspection" title="Permanent link">&para;</a></h3>
+<p><strong>Physical Checks:</strong></p>
+<ul>
+<li>Inspect cables for damage</li>
+<li>Check PoE switch ventilation</li>
+<li>Clean dust from equipment</li>
+<li>Verify all LEDs indicate normal operation</li>
+</ul>
+<p><strong>Network:</strong></p>
+<ul>
+<li>Test network speed: <code>speedtest-cli</code></li>
+<li>Check for packet loss: <code>ping -c 100 &lt;local_gateway_ip&gt;</code></li>
+<li>Review switch logs (if managed)</li>
+</ul>
+<h2 id="yearly-tasks">Yearly Tasks<a class="headerlink" href="#yearly-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="full-system-backup">Full System Backup<a class="headerlink" href="#full-system-backup" title="Permanent link">&para;</a></h3>
+<p><strong>Proxmox:</strong></p>
+<ol>
+<li>Backup all VMs</li>
+<li>Export configuration</li>
+<li>Document any custom settings</li>
+</ol>
+<p><strong>Node-RED:</strong></p>
+<ol>
+<li>Export all flows</li>
+<li>Backup settings.js</li>
+<li>Document installed nodes</li>
+</ol>
+<p><strong>Grafana:</strong></p>
+<ol>
+<li>Export all dashboards</li>
+<li>Backup data sources configuration</li>
+<li>Document plugins</li>
+</ol>
+<p><strong>Documentation:</strong></p>
+<p>Create archive of all documentation and configuration files.</p>
+<h3 id="disaster-recovery-test">Disaster Recovery Test<a class="headerlink" href="#disaster-recovery-test" title="Permanent link">&para;</a></h3>
+<p>Simulate failure and recovery:</p>
+<ol>
+<li><strong>Test VM restore</strong> from backup</li>
+<li><strong>Test network failure</strong> recovery</li>
+<li><strong>Test power failure</strong> recovery</li>
+<li><strong>Document recovery time</strong> and issues</li>
+</ol>
+<h3 id="capacity-planning">Capacity Planning<a class="headerlink" href="#capacity-planning" title="Permanent link">&para;</a></h3>
+<p>Review growth and plan for future:</p>
+<p><strong>Data Growth:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># InfluxDB size over time</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="s2">&quot;SHOW STATS FOR &#39;database&#39;&quot;</span>
+</code></pre></div>
+<p><strong>Resource Usage Trends:</strong></p>
+<p>Review historical:</p>
+<ul>
+<li>CPU usage</li>
+<li>Memory usage</li>
+<li>Disk usage</li>
+<li>Network bandwidth</li>
+</ul>
+<p><strong>Plan for:</strong></p>
+<ul>
+<li>Storage expansion</li>
+<li>Additional services</li>
+<li>Performance upgrades</li>
+</ul>
+<h3 id="firmware-and-software-updates">Firmware and Software Updates<a class="headerlink" href="#firmware-and-software-updates" title="Permanent link">&para;</a></h3>
+<p><strong>Proxmox:</strong></p>
+<p>Check for major version updates: <a href="https://www.proxmox.com/">https://www.proxmox.com/</a></p>
+<p><strong>IOTstack:</strong></p>
+<p>Check for breaking changes: <a href="https://github.com/SensorsIot/IOTstack">https://github.com/SensorsIot/IOTstack</a></p>
+<p><strong>Samsung Display:</strong></p>
+<p>Check for firmware updates from manufacturer.</p>
+<h3 id="review-slauptime">Review SLA/Uptime<a class="headerlink" href="#review-slauptime" title="Permanent link">&para;</a></h3>
+<p>Calculate system uptime and reliability:</p>
+<div class="highlight"><pre><span></span><code>uptime
+</code></pre></div>
+<p>Document:</p>
+<ul>
+<li>Total uptime %</li>
+<li>Number of incidents</li>
+<li>Mean time to recovery</li>
+<li>Lessons learned</li>
+</ul>
+<h2 id="maintenance-calendar">Maintenance Calendar<a class="headerlink" href="#maintenance-calendar" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Frequency</th>
+<th>Estimated Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monitor status</td>
+<td>Daily</td>
+<td>5 min</td>
+</tr>
+<tr>
+<td>Review logs</td>
+<td>Weekly</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>Check backups</td>
+<td>Weekly</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>Update Docker</td>
+<td>Monthly</td>
+<td>30 min</td>
+</tr>
+<tr>
+<td>Update OS</td>
+<td>Monthly</td>
+<td>30 min</td>
+</tr>
+<tr>
+<td>Security review</td>
+<td>Quarterly</td>
+<td>1 hour</td>
+</tr>
+<tr>
+<td>Full backup</td>
+<td>Yearly</td>
+<td>2 hours</td>
+</tr>
+<tr>
+<td>DR test</td>
+<td>Yearly</td>
+<td>4 hours</td>
+</tr>
+</tbody>
+</table>
+<h2 id="automation-opportunities">Automation Opportunities<a class="headerlink" href="#automation-opportunities" title="Permanent link">&para;</a></h2>
+<h3 id="automated-monitoring">Automated Monitoring<a class="headerlink" href="#automated-monitoring" title="Permanent link">&para;</a></h3>
+<p>Set up alerts for:</p>
+<ul>
+<li>Container failures</li>
+<li>Disk space &lt;20%</li>
+<li>High CPU/memory</li>
+<li>Network issues</li>
+</ul>
+<p>Use tools like:</p>
+<ul>
+<li>Grafana alerts (email/Slack)</li>
+<li>Prometheus + Alertmanager</li>
+<li>Uptime Kuma</li>
+</ul>
+<h3 id="automated-backups">Automated Backups<a class="headerlink" href="#automated-backups" title="Permanent link">&para;</a></h3>
+<p>Schedule backups via cron:</p>
+<div class="highlight"><pre><span></span><code>crontab<span class="w"> </span>-e
+</code></pre></div>
+<p>Add:</p>
+<div class="highlight"><pre><span></span><code># Daily backup at 2 AM
+0 2 * * * cd ~/IOTstack &amp;&amp; ./scripts/backup.sh
+
+# Weekly cleanup at 3 AM Sunday
+0 3 * * 0 docker system prune -f
+</code></pre></div>
+<h3 id="automated-updates">Automated Updates<a class="headerlink" href="#automated-updates" title="Permanent link">&para;</a></h3>
+<p>Consider using:</p>
+<ul>
+<li>Watchtower (auto-update Docker containers)</li>
+<li>Unattended-upgrades (auto-update OS)</li>
+</ul>
+<p><strong>Warning:</strong> Test in non-production first.</p>
+<h2 id="maintenance-log">Maintenance Log<a class="headerlink" href="#maintenance-log" title="Permanent link">&para;</a></h2>
+<p>Keep a log of all maintenance activities:</p>
+<div class="highlight"><pre><span></span><code>Date: 2026-01-07
+Task: Monthly Docker updates
+Result: All containers updated successfully
+Issues: None
+Time: 25 minutes
+</code></pre></div>
+<p>Store in:</p>
+<ul>
+<li>Text file</li>
+<li>Spreadsheet</li>
+<li>Ticketing system</li>
+<li>Wiki</li>
+</ul>
+<h2 id="contact-information">Contact Information<a class="headerlink" href="#contact-information" title="Permanent link">&para;</a></h2>
+<p>Document key contacts:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Contact</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System Administrator</td>
+<td>Kieran Julien</td>
+<td>Primary contact</td>
+</tr>
+<tr>
+<td>System Administrator</td>
+<td>CoE HRTech</td>
+<td>Secondary contact</td>
+</tr>
+<tr>
+<td>Network (Modem)</td>
+<td>Montreal Solutions</td>
+<td>Modem management, see their guide</td>
+</tr>
+<tr>
+<td>Proxmox Support</td>
+<td>(Community/Commercial)</td>
+<td>For Proxmox issues</td>
+</tr>
+<tr>
+<td>Hardware Vendor</td>
+<td>Samsung</td>
+<td>Display support</td>
+</tr>
+</tbody>
+</table>
+<h2 id="escalation-procedures">Escalation Procedures<a class="headerlink" href="#escalation-procedures" title="Permanent link">&para;</a></h2>
+<p>For critical issues:</p>
+<ol>
+<li><strong>Level 1</strong>: Check troubleshooting guide</li>
+<li><strong>Level 2</strong>: Review logs and recent changes</li>
+<li><strong>Level 3</strong>: Contact system administrator</li>
+<li><strong>Level 4</strong>: Engage vendor support</li>
+</ol>
+<p>Document resolution for future reference.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

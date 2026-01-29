@@ -1,0 +1,2737 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete setup and maintenance guide for the wind turbine monitoring e-ink display system">
+      
+      
+        <meta name="author" content="Your Name">
+      
+      
+      
+        <link rel="prev" href="../scripts/">
+      
+      
+        <link rel="next" href="../../hardware/network/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>SSH Configuration - E-Ink Display IoT System - Internship Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ssh-configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-header__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            E-Ink Display IoT System - Internship Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SSH Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../infrastructure/proxmox/" class="md-tabs__link">
+          
+  
+  
+  Infrastructure Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../services/influxdb/" class="md-tabs__link">
+          
+  
+  
+  Docker Services
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gadget-mode/" class="md-tabs__link">
+          
+  
+  
+  Raspberry Pi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/network/" class="md-tabs__link">
+          
+  
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../maintenance/regular-tasks/" class="md-tabs__link">
+          
+  
+  
+  Maintenance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/configs/" class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-nav__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    E-Ink Display IoT System - Internship Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infrastructure Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/proxmox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox Host
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/vm-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VM Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/iotstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IOTstack Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docker Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/influxdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InfluxDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana-renderer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana Image Renderer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/node-red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node-RED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/portainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Raspberry Pi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gadget-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gadget Mode Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Configuration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-tailscale-on-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Tailscale on Raspberry Pi
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-the-vm-node-red-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On the VM (Node-RED Host)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On the VM (Node-RED Host)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-ssh-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate SSH Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-public-key-to-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copy Public Key to Raspberry Pi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-ssh-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test SSH Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-the-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On the Raspberry Pi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On the Raspberry Pi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-password-authentication-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable Password Authentication (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-sudo-for-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Sudo for Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-sudo-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Sudo Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-red-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node-RED Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-docker-node-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Docker Node-RED
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Docker Node-RED">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-mount-ssh-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Mount SSH Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-copy-key-into-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Copy Key into Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-from-node-red-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test from Node-RED Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-known-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Known Hosts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-red-exec-node-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED Exec Node Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node-RED Exec Node Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scp-command-copy-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCP Command (Copy Image)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-command-trigger-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Command (Trigger Script)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-denied-publickey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permission Denied (publickey)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-key-verification-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host Key Verification Failed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Timeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCP Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-ssh-keys-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use SSH Keys Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-sudo-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limit Sudo Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firewall Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-key-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular Key Rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-ssh-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor SSH Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-full-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Full Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Full Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-vm-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From VM Terminal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-node-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Node-RED
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-ssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup SSH Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-scp-without-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative: SCP Without SSH
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Topology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/poe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PoE Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Samsung E-Ink Display
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maintenance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/regular-tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendix
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/configs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-tailscale-on-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Tailscale on Raspberry Pi
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-the-vm-node-red-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On the VM (Node-RED Host)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On the VM (Node-RED Host)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-ssh-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate SSH Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-public-key-to-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copy Public Key to Raspberry Pi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-ssh-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test SSH Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-the-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On the Raspberry Pi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On the Raspberry Pi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-password-authentication-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable Password Authentication (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-sudo-for-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Sudo for Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-sudo-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Sudo Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-red-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node-RED Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-docker-node-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Docker Node-RED
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Docker Node-RED">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-mount-ssh-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Mount SSH Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-copy-key-into-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Copy Key into Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-from-node-red-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test from Node-RED Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-known-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Known Hosts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-red-exec-node-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED Exec Node Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node-RED Exec Node Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scp-command-copy-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCP Command (Copy Image)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-command-trigger-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Command (Trigger Script)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-denied-publickey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permission Denied (publickey)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-key-verification-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host Key Verification Failed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Timeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCP Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-ssh-keys-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use SSH Keys Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-sudo-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limit Sudo Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firewall Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-key-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular Key Rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-ssh-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor SSH Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-full-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Full Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Full Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-vm-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From VM Terminal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-node-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Node-RED
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-ssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup SSH Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-scp-without-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative: SCP Without SSH
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ssh-configuration">SSH Configuration<a class="headerlink" href="#ssh-configuration" title="Permanent link">&para;</a></h1>
+<p>Configure SSH for Node-RED to trigger scripts on the Raspberry Pi.</p>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
+<p>Allow Node-RED on the VM to execute commands on the Raspberry Pi without password prompts.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h3 id="install-tailscale-on-raspberry-pi">Install Tailscale on Raspberry Pi<a class="headerlink" href="#install-tailscale-on-raspberry-pi" title="Permanent link">&para;</a></h3>
+<p>Tailscale provides secure networking between the VM and Raspberry Pi without requiring manual port forwarding.</p>
+<p><strong>Install Tailscale:</strong></p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://tailscale.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+sudo<span class="w"> </span>tailscale<span class="w"> </span>up
+</code></pre></div>
+<p>Follow the authentication link in your browser to connect your Pi to your Tailscale network.</p>
+<p><strong>Get Pi's Tailscale IP:</strong></p>
+<div class="highlight"><pre><span></span><code>tailscale<span class="w"> </span>ip<span class="w"> </span>-4
+</code></pre></div>
+<p>Note this IP address (typically in the <code>100.x.x.x</code> range) - you'll use it for SSH connections and in Node-RED.</p>
+<div class="admonition note">
+<p class="admonition-title">VM Tailscale Setup Required</p>
+<p>Ensure Tailscale is also installed on your VM. See <a href="../../services/node-red/#tailscale-configuration">Node-RED Configuration - Tailscale Configuration</a> for VM setup.</p>
+</div>
+<h2 id="on-the-vm-node-red-host">On the VM (Node-RED Host)<a class="headerlink" href="#on-the-vm-node-red-host" title="Permanent link">&para;</a></h2>
+<h3 id="generate-ssh-key">Generate SSH Key<a class="headerlink" href="#generate-ssh-key" title="Permanent link">&para;</a></h3>
+<p>As the user running Node-RED (or Docker user):</p>
+<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;node-red@iotstack&quot;</span>
+</code></pre></div>
+<p>Press Enter for all prompts (no passphrase for automation).</p>
+<p>Keys created:</p>
+<ul>
+<li>Private: <code>~/.ssh/id_ed25519</code></li>
+<li>Public: <code>~/.ssh/id_ed25519.pub</code></li>
+</ul>
+<h3 id="copy-public-key-to-raspberry-pi">Copy Public Key to Raspberry Pi<a class="headerlink" href="#copy-public-key-to-raspberry-pi" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ssh-copy-id<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;
+</code></pre></div>
+<p>Replace:
+- <code>&lt;pi_username&gt;</code> with your Raspberry Pi username (e.g., <code>hrtech</code>, <code>pi</code>)
+- <code>&lt;pi_tailscale_ip&gt;</code> with your Raspberry Pi's Tailscale IP address (e.g., <code>100.64.1.5</code>)</p>
+<p>Enter Raspberry Pi password when prompted.</p>
+<div class="admonition tip">
+<p class="admonition-title">Use Tailscale IP Address</p>
+<p>Use the Pi's Tailscale IP address, not its local network IP. Get this with <code>tailscale ip -4</code> on the Pi.</p>
+</div>
+<p>Alternatively, manual copy:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
+</code></pre></div>
+<p>Copy the output, then on Raspberry Pi:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.ssh
+nano<span class="w"> </span>~/.ssh/authorized_keys
+<span class="c1"># Paste the public key</span>
+chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/authorized_keys
+</code></pre></div>
+<h3 id="test-ssh-connection">Test SSH Connection<a class="headerlink" href="#test-ssh-connection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;echo Connected successfully&#39;</span>
+</code></pre></div>
+<p>Should connect without password using the Tailscale IP.</p>
+<h2 id="on-the-raspberry-pi">On the Raspberry Pi<a class="headerlink" href="#on-the-raspberry-pi" title="Permanent link">&para;</a></h2>
+<h3 id="disable-password-authentication-recommended">Disable Password Authentication (Recommended)<a class="headerlink" href="#disable-password-authentication-recommended" title="Permanent link">&para;</a></h3>
+<p>For security, allow only key-based auth:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/ssh/sshd_config
+</code></pre></div>
+<p>Find and set:</p>
+<div class="highlight"><pre><span></span><code>PasswordAuthentication no
+PubkeyAuthentication yes
+ChallengeResponseAuthentication no
+</code></pre></div>
+<p>Restart SSH:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
+</code></pre></div>
+<h3 id="configure-sudo-for-scripts">Configure Sudo for Scripts<a class="headerlink" href="#configure-sudo-for-scripts" title="Permanent link">&para;</a></h3>
+<p>Allow running specific commands without password:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>visudo
+</code></pre></div>
+<p>Add these lines (replace <code>&lt;pi_username&gt;</code> with your actual Raspberry Pi username):</p>
+<div class="highlight"><pre><span></span><code>&lt;pi_username&gt; ALL=(ALL) NOPASSWD: /usr/bin/tee
+&lt;pi_username&gt; ALL=(ALL) NOPASSWD: /usr/bin/mount
+&lt;pi_username&gt; ALL=(ALL) NOPASSWD: /usr/bin/umount
+&lt;pi_username&gt; ALL=(ALL) NOPASSWD: /usr/bin/mkdir
+&lt;pi_username&gt; ALL=(ALL) NOPASSWD: /bin/rm
+&lt;pi_username&gt; ALL=(ALL) NOPASSWD: /bin/cp
+</code></pre></div>
+<p>This allows passwordless sudo for the scripts.</p>
+<h3 id="test-sudo-commands">Test Sudo Commands<a class="headerlink" href="#test-sudo-commands" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;sudo mount -o loop /home/&lt;pi_username&gt;/drive.bin /mnt&#39;</span>
+</code></pre></div>
+<p>Should not prompt for password.</p>
+<h2 id="node-red-configuration">Node-RED Configuration<a class="headerlink" href="#node-red-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="for-docker-node-red">For Docker Node-RED<a class="headerlink" href="#for-docker-node-red" title="Permanent link">&para;</a></h3>
+<p>If Node-RED runs in Docker, the SSH key must be accessible inside the container.</p>
+<h4 id="option-1-mount-ssh-directory">Option 1: Mount SSH Directory<a class="headerlink" href="#option-1-mount-ssh-directory" title="Permanent link">&para;</a></h4>
+<p>Edit <code>docker-compose.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">nodered</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./volumes/nodered/data:/data</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/&lt;your-user&gt;/.ssh:/root/.ssh:ro</span><span class="w">  </span><span class="c1"># Add this line</span>
+</code></pre></div>
+<p>Restart Node-RED:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>nodered
+</code></pre></div>
+<h4 id="option-2-copy-key-into-container">Option 2: Copy Key into Container<a class="headerlink" href="#option-2-copy-key-into-container" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>~/.ssh/id_ed25519<span class="w"> </span>nodered:/root/.ssh/
+docker<span class="w"> </span>cp<span class="w"> </span>~/.ssh/id_ed25519.pub<span class="w"> </span>nodered:/root/.ssh/
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/root/.ssh/id_ed25519
+</code></pre></div>
+<h3 id="test-from-node-red-container">Test from Node-RED Container<a class="headerlink" href="#test-from-node-red-container" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;echo Test from container&#39;</span>
+</code></pre></div>
+<h3 id="ssh-known-hosts">SSH Known Hosts<a class="headerlink" href="#ssh-known-hosts" title="Permanent link">&para;</a></h3>
+<p>First connection may prompt to accept host key:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>nodered<span class="w"> </span>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;
+</code></pre></div>
+<p>Type <code>yes</code> to accept.</p>
+<p>Or add to known_hosts automatically:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>ssh-keyscan<span class="w"> </span>-H<span class="w"> </span>&lt;pi_tailscale_ip&gt;<span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.ssh/known_hosts
+</code></pre></div>
+<h2 id="node-red-exec-node-configuration">Node-RED Exec Node Configuration<a class="headerlink" href="#node-red-exec-node-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="scp-command-copy-image">SCP Command (Copy Image)<a class="headerlink" href="#scp-command-copy-image" title="Permanent link">&para;</a></h3>
+<p><strong>Command:</strong></p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>/tmp/001.png<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;:/home/&lt;pi_username&gt;/incoming_images/incoming.png
+</code></pre></div>
+<p>Example:
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>/tmp/001.png<span class="w"> </span>hrtech@100.64.1.5:/home/hrtech/incoming_images/incoming.png
+</code></pre></div></p>
+<p><strong>Options:</strong></p>
+<ul>
+<li><strong>Append msg.payload</strong>: Unchecked</li>
+<li><strong>Use spawn</strong>: Unchecked</li>
+<li><strong>Timeout</strong>: 60 seconds</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Use Tailscale IP Address</p>
+<p>Use the Raspberry Pi's Tailscale IP address (100.x.x.x range), not its local network IP.</p>
+</div>
+<h3 id="ssh-command-trigger-script">SSH Command (Trigger Script)<a class="headerlink" href="#ssh-command-trigger-script" title="Permanent link">&para;</a></h3>
+<p>Add an exec node after SCP:</p>
+<p><strong>Command:</strong></p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;/home/&lt;pi_username&gt;/refresh_script.sh&#39;</span>
+</code></pre></div>
+<p>Example:
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>hrtech@100.64.1.5<span class="w"> </span><span class="s1">&#39;/home/hrtech/refresh_script.sh&#39;</span>
+</code></pre></div></p>
+<p><strong>Options:</strong></p>
+<ul>
+<li><strong>Append msg.payload</strong>: Unchecked</li>
+<li><strong>Use spawn</strong>: Unchecked</li>
+<li><strong>Timeout</strong>: 120 seconds (script may take time)</li>
+</ul>
+<h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h3>
+<p>Connect the error output (pin 2) of exec nodes to debug nodes to catch failures.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="permission-denied-publickey">Permission Denied (publickey)<a class="headerlink" href="#permission-denied-publickey" title="Permanent link">&para;</a></h3>
+<p>Check:</p>
+<ol>
+<li>Public key copied to Pi: <code>cat ~/.ssh/authorized_keys</code> on Pi</li>
+<li>Private key accessible in Node-RED container</li>
+<li>Permissions correct:</li>
+<li>Private key: <code>chmod 600</code></li>
+<li><code>~/.ssh</code> directory: <code>chmod 700</code></li>
+</ol>
+<h3 id="host-key-verification-failed">Host Key Verification Failed<a class="headerlink" href="#host-key-verification-failed" title="Permanent link">&para;</a></h3>
+<p>Add Pi to known_hosts:</p>
+<div class="highlight"><pre><span></span><code>ssh-keyscan<span class="w"> </span>-H<span class="w"> </span>&lt;pi_tailscale_ip&gt;<span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.ssh/known_hosts
+</code></pre></div>
+<p>Inside container:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>ssh-keyscan<span class="w"> </span>-H<span class="w"> </span>&lt;pi_tailscale_ip&gt;<span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.ssh/known_hosts
+</code></pre></div>
+<h3 id="connection-timeout">Connection Timeout<a class="headerlink" href="#connection-timeout" title="Permanent link">&para;</a></h3>
+<p>Check:</p>
+<ol>
+<li>Tailscale is connected on both VM and Pi:</li>
+<li>VM: <code>docker exec tailscale tailscale status</code> (if Docker) or <code>tailscale status</code> (if native)</li>
+<li>Pi: <code>sudo tailscale status</code></li>
+<li>Pi is reachable via Tailscale: <code>ping &lt;pi_tailscale_ip&gt;</code></li>
+<li>SSH service running on Pi: <code>sudo systemctl status ssh</code></li>
+<li>Pi's Tailscale IP hasn't changed (rare, but check with <code>tailscale ip -4</code> on Pi)</li>
+</ol>
+<h3 id="scp-fails">SCP Fails<a class="headerlink" href="#scp-fails" title="Permanent link">&para;</a></h3>
+<p>Verify:</p>
+<ol>
+<li>Source file exists: <code>ls /tmp/001.png</code></li>
+<li>Destination directory exists on Pi: <code>ls /home/&lt;pi_username&gt;/incoming_images/</code></li>
+<li>Permissions allow write to destination</li>
+</ol>
+<p>Create directory if missing:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;rpi_ip&gt;<span class="w"> </span><span class="s1">&#39;mkdir -p /home/&lt;pi_username&gt;/incoming_images&#39;</span>
+</code></pre></div>
+<h2 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="use-ssh-keys-only">Use SSH Keys Only<a class="headerlink" href="#use-ssh-keys-only" title="Permanent link">&para;</a></h3>
+<p>Never use password authentication for automation.</p>
+<h3 id="limit-sudo-commands">Limit Sudo Commands<a class="headerlink" href="#limit-sudo-commands" title="Permanent link">&para;</a></h3>
+<p>Only grant passwordless sudo to specific commands needed by scripts.</p>
+<h3 id="firewall-rules">Firewall Rules<a class="headerlink" href="#firewall-rules" title="Permanent link">&para;</a></h3>
+<p>On the Pi, you can optionally restrict SSH access to Tailscale network only:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Allow SSH only from Tailscale interface</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="k">in</span><span class="w"> </span>on<span class="w"> </span>tailscale0<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">22</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>deny<span class="w"> </span><span class="m">22</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+</code></pre></div>
+<p>This ensures SSH is only accessible through Tailscale, not from the local network.</p>
+<h3 id="regular-key-rotation">Regular Key Rotation<a class="headerlink" href="#regular-key-rotation" title="Permanent link">&para;</a></h3>
+<p>Periodically regenerate SSH keys:</p>
+<ol>
+<li>Generate new key</li>
+<li>Copy to Pi</li>
+<li>Test</li>
+<li>Remove old key from <code>authorized_keys</code></li>
+</ol>
+<h3 id="monitor-ssh-logs">Monitor SSH Logs<a class="headerlink" href="#monitor-ssh-logs" title="Permanent link">&para;</a></h3>
+<p>On Pi, check for suspicious activity:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/auth.log
+</code></pre></div>
+<h2 id="testing-full-flow">Testing Full Flow<a class="headerlink" href="#testing-full-flow" title="Permanent link">&para;</a></h2>
+<h3 id="from-vm-terminal">From VM Terminal<a class="headerlink" href="#from-vm-terminal" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Copy image</span>
+scp<span class="w"> </span>/tmp/001.png<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;:/home/&lt;pi_username&gt;/incoming_images/incoming.png
+
+<span class="c1"># Trigger script</span>
+ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;/home/&lt;pi_username&gt;/refresh_script.sh&#39;</span>
+</code></pre></div>
+<p>Example:
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>/tmp/001.png<span class="w"> </span>hrtech@100.64.1.5:/home/hrtech/incoming_images/incoming.png
+ssh<span class="w"> </span>hrtech@100.64.1.5<span class="w"> </span><span class="s1">&#39;/home/hrtech/refresh_script.sh&#39;</span>
+</code></pre></div></p>
+<p>Both should complete without password prompts.</p>
+<h3 id="from-node-red">From Node-RED<a class="headerlink" href="#from-node-red" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Manually inject the "loop_image_renderer" flow</li>
+<li>Check debug output for:</li>
+<li>Successful SCP</li>
+<li>Successful SSH script execution</li>
+<li>Verify image appears on display</li>
+</ol>
+<h2 id="backup-ssh-keys">Backup SSH Keys<a class="headerlink" href="#backup-ssh-keys" title="Permanent link">&para;</a></h2>
+<p>Save SSH keys securely:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># On VM</span>
+cp<span class="w"> </span>~/.ssh/id_ed25519<span class="w"> </span>/path/to/secure/backup/
+cp<span class="w"> </span>~/.ssh/id_ed25519.pub<span class="w"> </span>/path/to/secure/backup/
+</code></pre></div>
+<p>Store in password manager or encrypted backup.</p>
+<h2 id="alternative-scp-without-ssh">Alternative: SCP Without SSH<a class="headerlink" href="#alternative-scp-without-ssh" title="Permanent link">&para;</a></h2>
+<p>If SSH setup is problematic, alternatives:</p>
+<ol>
+<li><strong>HTTP Upload</strong>: Run web server on Pi, Node-RED POSTs image</li>
+<li><strong>Shared Network Storage</strong>: NFS or SAMBA mount</li>
+<li><strong>MQTT</strong>: Publish image as base64 message</li>
+</ol>
+<p>However, SSH/SCP is the most straightforward for this use case.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

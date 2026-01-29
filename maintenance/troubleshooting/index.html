@@ -1,0 +1,3512 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete setup and maintenance guide for the wind turbine monitoring e-ink display system">
+      
+      
+        <meta name="author" content="Your Name">
+      
+      
+      
+        <link rel="prev" href="../regular-tasks/">
+      
+      
+        <link rel="next" href="../backup/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Troubleshooting - E-Ink Display IoT System - Internship Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#troubleshooting-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-header__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            E-Ink Display IoT System - Internship Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshooting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../infrastructure/proxmox/" class="md-tabs__link">
+          
+  
+  
+  Infrastructure Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../services/influxdb/" class="md-tabs__link">
+          
+  
+  
+  Docker Services
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../raspberry-pi/gadget-mode/" class="md-tabs__link">
+          
+  
+  
+  Raspberry Pi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/network/" class="md-tabs__link">
+          
+  
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../regular-tasks/" class="md-tabs__link">
+          
+  
+  
+  Maintenance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/configs/" class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-nav__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    E-Ink Display IoT System - Internship Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infrastructure Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/proxmox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox Host
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/vm-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VM Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/iotstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IOTstack Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docker Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/influxdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InfluxDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana-renderer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana Image Renderer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/node-red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node-RED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/portainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Raspberry Pi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/gadget-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gadget Mode Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/ssh-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Topology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/poe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PoE Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Samsung E-Ink Display
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maintenance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regular-tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-wide-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System-Wide Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System-Wide Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-services-offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All Services Offline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxmox-vm-wont-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxmox VM Won't Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-connectivity-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Connectivity Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockercontainer-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker/Container Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker/Container Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-keeps-restarting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container Keeps Restarting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-not-starting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container Not Starting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-disk-full" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Disk Full
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-red-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node-RED Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flow-not-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Not Running
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Request Timeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#influxdb-write-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfluxDB Write Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sshscp-to-raspberry-pi-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH/SCP to Raspberry Pi Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grafana Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cant-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can't Login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-shows-no-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard Shows "No Data"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-rendering-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Rendering Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influxdb-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfluxDB Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InfluxDB Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Not Found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-memory-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Memory Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspberry Pi Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pi-not-reachable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pi Not Reachable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-gadget-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB Gadget Not Working
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-not-updating-on-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Not Updating on Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tailscale-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tailscale Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-not-connected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Not Connected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-ip-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale IP Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-firewall-blocked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Firewall Blocked
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devices-cant-see-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Devices Can't See Each Other
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#display-not-powering-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display Not Powering On
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-showing-wrong-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display Showing Wrong Image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ghosting-on-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ghosting on Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slow-response-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slow Response Times
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-disk-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Disk I/O
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-data-in-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Data in Grafana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incorrect-data-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incorrect Data Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collect-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collect Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-support-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Support Ticket
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emergency-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emergency Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Emergency Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendix
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/configs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-wide-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System-Wide Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System-Wide Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-services-offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All Services Offline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxmox-vm-wont-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxmox VM Won't Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-connectivity-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Connectivity Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockercontainer-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker/Container Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker/Container Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-keeps-restarting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container Keeps Restarting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-not-starting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container Not Starting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-disk-full" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Disk Full
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-red-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node-RED Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flow-not-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Not Running
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Request Timeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#influxdb-write-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfluxDB Write Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sshscp-to-raspberry-pi-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH/SCP to Raspberry Pi Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grafana Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cant-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can't Login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-shows-no-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard Shows "No Data"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-rendering-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Rendering Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influxdb-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfluxDB Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InfluxDB Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Not Found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-memory-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Memory Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspberry Pi Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pi-not-reachable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pi Not Reachable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-gadget-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB Gadget Not Working
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-not-updating-on-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Not Updating on Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tailscale-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tailscale Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-not-connected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Not Connected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-ip-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale IP Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-firewall-blocked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Firewall Blocked
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devices-cant-see-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Devices Can't See Each Other
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#display-not-powering-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display Not Powering On
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-showing-wrong-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display Showing Wrong Image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ghosting-on-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ghosting on Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slow-response-times" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slow Response Times
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-disk-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Disk I/O
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-data-in-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Data in Grafana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incorrect-data-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incorrect Data Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collect-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collect Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-support-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Support Ticket
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emergency-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emergency Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Emergency Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="troubleshooting-guide">Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">&para;</a></h1>
+<p>Common issues and their solutions.</p>
+<h2 id="system-wide-issues">System-Wide Issues<a class="headerlink" href="#system-wide-issues" title="Permanent link">&para;</a></h2>
+<h3 id="all-services-offline">All Services Offline<a class="headerlink" href="#all-services-offline" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Cannot access Grafana, Node-RED, InfluxDB</li>
+<li>Docker containers not running</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;vm_username&gt;@&lt;vm_ip&gt;
+docker<span class="w"> </span>compose<span class="w"> </span>ps
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/IOTstack
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<p>Check logs for errors:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>-f
+</code></pre></div>
+<h3 id="proxmox-vm-wont-start">Proxmox VM Won't Start<a class="headerlink" href="#proxmox-vm-wont-start" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>VM shows "stopped" status in Proxmox</li>
+<li>Cannot SSH to VM</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>In Proxmox web interface, select VM</li>
+<li>Click <strong>Start</strong></li>
+<li>Open <strong>Console</strong> to see boot messages</li>
+<li>If boot fails, check:</li>
+<li>Disk space on Proxmox host</li>
+<li>VM configuration (RAM, CPU limits)</li>
+<li>Proxmox logs: <code>journalctl -u pveproxy</code></li>
+</ol>
+<h3 id="network-connectivity-issues">Network Connectivity Issues<a class="headerlink" href="#network-connectivity-issues" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Services cannot reach internet</li>
+<li>Services cannot reach each other</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Test internet</span>
+ping<span class="w"> </span><span class="m">8</span>.8.8.8
+
+<span class="c1"># Test gateway</span>
+ping<span class="w"> </span>&lt;local_gateway_ip&gt;
+
+<span class="c1"># Test DNS</span>
+nslookup<span class="w"> </span>google.com
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<p>Check network configuration (see <a href="../../infrastructure/vm-setup/#set-static-ip-recommended">VM Setup</a>).</p>
+<p>If DHCP:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dhclient<span class="w"> </span>-r<span class="w">  </span><span class="c1"># Release</span>
+sudo<span class="w"> </span>dhclient<span class="w">     </span><span class="c1"># Renew</span>
+</code></pre></div>
+<p>If static IP, verify gateway and DNS in network config.</p>
+<h2 id="dockercontainer-issues">Docker/Container Issues<a class="headerlink" href="#dockercontainer-issues" title="Permanent link">&para;</a></h2>
+<h3 id="container-keeps-restarting">Container Keeps Restarting<a class="headerlink" href="#container-keeps-restarting" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Container status shows "Restarting"</li>
+<li><code>docker compose ps</code> shows restart count increasing</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>&lt;service-name&gt;
+</code></pre></div>
+<p><strong>Common Causes:</strong></p>
+<ol>
+<li><strong>Configuration error</strong>: Check environment variables</li>
+<li><strong>Port conflict</strong>: Another service using same port</li>
+<li><strong>Resource limit</strong>: Container out of memory</li>
+</ol>
+<p><strong>Solutions:</strong></p>
+<p><strong>Port Conflict:</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>&lt;port&gt;
+</code></pre></div>
+<p>Change port in <code>docker-compose.yml</code> or stop conflicting service.</p>
+<p><strong>Memory Limit:</strong></p>
+<p>Edit <code>docker-compose.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">&lt;service&gt;</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">mem_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2g</span>
+</code></pre></div>
+<p>Restart:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>&lt;service&gt;
+</code></pre></div>
+<h3 id="container-not-starting">Container Not Starting<a class="headerlink" href="#container-not-starting" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Container shows "Exited" status</li>
+<li>Won't stay running</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--tail<span class="o">=</span><span class="m">50</span><span class="w"> </span>&lt;service&gt;
+</code></pre></div>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Remove and recreate:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>&lt;service&gt;
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>&lt;service&gt;
+</code></pre></div>
+<ol>
+<li><strong>Check volume permissions:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-la<span class="w"> </span>~/IOTstack/volumes/&lt;service&gt;/
+sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span><span class="m">1000</span>:1000<span class="w"> </span>~/IOTstack/volumes/&lt;service&gt;/
+</code></pre></div>
+<ol>
+<li><strong>Pull fresh image:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>pull<span class="w"> </span>&lt;service&gt;
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>&lt;service&gt;
+</code></pre></div>
+<h3 id="docker-disk-full">Docker Disk Full<a class="headerlink" href="#docker-disk-full" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>"no space left on device" errors</li>
+<li>Containers failing to start</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h
+docker<span class="w"> </span>system<span class="w"> </span>df
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove unused containers, networks, images</span>
+docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"> </span>-a
+
+<span class="c1"># For aggressive cleanup (includes volumes)</span>
+docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"> </span>-a<span class="w"> </span>--volumes
+</code></pre></div>
+<p><strong>Warning:</strong> Backup first if removing volumes.</p>
+<h2 id="node-red-issues">Node-RED Issues<a class="headerlink" href="#node-red-issues" title="Permanent link">&para;</a></h2>
+<h3 id="flow-not-running">Flow Not Running<a class="headerlink" href="#flow-not-running" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Inject nodes don't trigger</li>
+<li>No data flowing through</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<ol>
+<li>Check Node-RED is running:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>ps<span class="w"> </span>nodered
+</code></pre></div>
+<ol>
+<li>Open Node-RED UI: <code>http://&lt;vm_ip&gt;:1880</code></li>
+<li>Check deploy status (should say "Deployed")</li>
+</ol>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Click <strong>Deploy</strong> button</li>
+<li>Check for errors in debug panel</li>
+<li>Verify inject nodes are enabled (blue badge under node)</li>
+</ol>
+<h3 id="http-request-timeout">HTTP Request Timeout<a class="headerlink" href="#http-request-timeout" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Weather API or eGauge requests failing</li>
+<li>"timeout" errors in debug</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<p>Check debug output:</p>
+<div class="highlight"><pre><span></span><code>&quot;Error: timeout of 60000ms exceeded&quot;
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Test URL manually:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;https://weerlive.nl/api/weerlive_api_v2.php?key=3c2224ecab&amp;locatie=51.89908,4.42348&quot;</span>
+</code></pre></div>
+<ol>
+<li><strong>Increase timeout</strong> in HTTP request node:</li>
+<li>Double-click node</li>
+<li>Set timeout to 120 seconds</li>
+<li>
+<p>Deploy</p>
+</li>
+<li>
+<p><strong>Check network connectivity</strong> from VM</p>
+</li>
+</ol>
+<h3 id="influxdb-write-failures">InfluxDB Write Failures<a class="headerlink" href="#influxdb-write-failures" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Debug shows "Failed to write to InfluxDB"</li>
+<li>Data not appearing in Grafana</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Test InfluxDB reachable</span>
+curl<span class="w"> </span>http://influxdb:8086/ping
+</code></pre></div>
+<p>If running outside Node-RED:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>curl<span class="w"> </span>http://influxdb:8086/ping
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Verify InfluxDB is running:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>ps<span class="w"> </span>influxdb
+docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>influxdb
+</code></pre></div>
+<ol>
+<li><strong>Check database exists:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="s2">&quot;SHOW DATABASES&quot;</span>
+</code></pre></div>
+<p>If <code>iot_data</code> missing:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="s2">&quot;CREATE DATABASE iot_data&quot;</span>
+</code></pre></div>
+<ol>
+<li><strong>Verify InfluxDB node configuration:</strong></li>
+<li>Server: <code>influxdb</code></li>
+<li>Port: <code>8086</code></li>
+<li>Database: <code>iot_data</code></li>
+</ol>
+<h3 id="sshscp-to-raspberry-pi-fails">SSH/SCP to Raspberry Pi Fails<a class="headerlink" href="#sshscp-to-raspberry-pi-fails" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>"Permission denied" errors</li>
+<li>"Connection refused"</li>
+<li>SCP command fails in exec node</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<p>Test SSH manually:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;echo test&#39;</span>
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<p>See <a href="../../raspberry-pi/ssh-setup/">SSH Configuration</a> for complete setup.</p>
+<p>Quick checks:</p>
+<ol>
+<li><strong>Tailscale is connected:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># On VM (if Docker)</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tailscale<span class="w"> </span>tailscale<span class="w"> </span>status
+
+<span class="c1"># On VM (if native)</span>
+sudo<span class="w"> </span>tailscale<span class="w"> </span>status
+
+<span class="c1"># On Pi</span>
+sudo<span class="w"> </span>tailscale<span class="w"> </span>status
+</code></pre></div>
+<ol>
+<li><strong>Pi is reachable via Tailscale:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ping<span class="w"> </span>&lt;pi_tailscale_ip&gt;<span class="w">  </span><span class="c1"># e.g., ping 100.64.1.5</span>
+</code></pre></div>
+<ol>
+<li><strong>SSH keys configured:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>ls<span class="w"> </span>-la<span class="w"> </span>/root/.ssh/
+</code></pre></div>
+<p>Should show <code>id_ed25519</code> and <code>id_ed25519.pub</code>.</p>
+<ol>
+<li><strong>Known hosts:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>ssh-keyscan<span class="w"> </span>-H<span class="w"> </span>&lt;pi_tailscale_ip&gt;<span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.ssh/known_hosts
+</code></pre></div>
+<ol>
+<li><strong>SSH volume mounted:</strong></li>
+</ol>
+<p>Check <code>docker-compose.yml</code> has:
+<div class="highlight"><pre><span></span><code><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/&lt;user&gt;/.ssh:/root/.ssh:ro</span>
+</code></pre></div></p>
+<h2 id="grafana-issues">Grafana Issues<a class="headerlink" href="#grafana-issues" title="Permanent link">&para;</a></h2>
+<h3 id="cant-login">Can't Login<a class="headerlink" href="#cant-login" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Forgot admin password</li>
+<li>Login page not loading</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<p><strong>Reset Password:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>grafana<span class="w"> </span>grafana-cli<span class="w"> </span>admin<span class="w"> </span>reset-admin-password<span class="w"> </span>newpassword
+</code></pre></div>
+<p>Replace <code>newpassword</code> with your new password.</p>
+<p><strong>Login Page Not Loading:</strong></p>
+<p>Check Grafana is running:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>ps<span class="w"> </span>grafana
+docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>grafana
+</code></pre></div>
+<p>Restart:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>grafana
+</code></pre></div>
+<h3 id="dashboard-shows-no-data">Dashboard Shows "No Data"<a class="headerlink" href="#dashboard-shows-no-data" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Dashboard panels empty</li>
+<li>Shows "No data" message</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<ol>
+<li><strong>Check data source:</strong> Configuration → Data Sources → InfluxDB-IoT → Test</li>
+<li><strong>Verify data exists:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="s2">&quot;SELECT * FROM weather LIMIT 5&quot;</span>
+</code></pre></div>
+<ol>
+<li><strong>Check time range:</strong> Dashboard may be showing wrong time period</li>
+</ol>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Adjust time range:</strong> Top right corner, select "Last 3 hours"</li>
+<li><strong>Check query:</strong> Edit panel → View query → Fix any syntax errors</li>
+<li><strong>Refresh:</strong> Click refresh button or Ctrl+R</li>
+</ol>
+<h3 id="image-rendering-fails">Image Rendering Fails<a class="headerlink" href="#image-rendering-fails" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Node-RED shows render errors</li>
+<li>Images not generated</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>ps<span class="w"> </span>grafana-image-renderer
+docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>grafana-image-renderer
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Verify renderer is running:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>grafana-image-renderer
+</code></pre></div>
+<ol>
+<li><strong>Check token matches:</strong></li>
+</ol>
+<p>In <code>docker-compose.yml</code>, verify:</p>
+<ul>
+<li>Grafana: <code>GF_RENDERING_RENDERER_TOKEN</code></li>
+<li>Renderer: <code>AUTH_TOKEN</code></li>
+</ul>
+<p>Are identical.</p>
+<ol>
+<li><strong>Test renderer directly:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;http://&lt;vm_ip&gt;:8081/&quot;</span><span class="w"> </span>
+</code></pre></div>
+<p>Should return "Grafana Image Renderer".</p>
+<h2 id="influxdb-issues">InfluxDB Issues<a class="headerlink" href="#influxdb-issues" title="Permanent link">&para;</a></h2>
+<h3 id="database-not-found">Database Not Found<a class="headerlink" href="#database-not-found" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>"database not found" errors</li>
+<li>Grafana can't connect</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="s2">&quot;CREATE DATABASE iot_data&quot;</span>
+</code></pre></div>
+<p>Verify:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="s2">&quot;SHOW DATABASES&quot;</span>
+</code></pre></div>
+<h3 id="high-memory-usage">High Memory Usage<a class="headerlink" href="#high-memory-usage" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>InfluxDB container using &gt;80% memory</li>
+<li>Slow queries</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>stats<span class="w"> </span>influxdb<span class="w"> </span>--no-stream
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Increase memory limit:</strong></li>
+</ol>
+<p>Edit <code>docker-compose.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">influxdb</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">mem_limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2g</span>
+</code></pre></div>
+<p>Restart:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>influxdb
+</code></pre></div>
+<ol>
+<li><strong>Implement retention policy:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;CREATE RETENTION POLICY 90_days ON iot_data DURATION 90d REPLICATION 1 DEFAULT&quot;</span>
+</code></pre></div>
+<ol>
+<li><strong>Downsample old data</strong> (see <a href="../../services/influxdb/">InfluxDB docs</a>)</li>
+</ol>
+<h2 id="raspberry-pi-issues">Raspberry Pi Issues<a class="headerlink" href="#raspberry-pi-issues" title="Permanent link">&para;</a></h2>
+<h3 id="pi-not-reachable">Pi Not Reachable<a class="headerlink" href="#pi-not-reachable" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Cannot SSH to Pi</li>
+<li>Ping fails</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Test via Tailscale</span>
+ping<span class="w"> </span>&lt;pi_tailscale_ip&gt;<span class="w">  </span><span class="c1"># e.g., ping 100.64.1.5</span>
+
+<span class="c1"># Test via local network (if on same network)</span>
+ping<span class="w"> </span>&lt;pi_local_ip&gt;<span class="w">  </span><span class="c1"># e.g., ping 192.168.178.148</span>
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Check Tailscale connectivity:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># On VM (Docker)</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tailscale<span class="w"> </span>tailscale<span class="w"> </span>status
+
+<span class="c1"># On VM (native)</span>
+sudo<span class="w"> </span>tailscale<span class="w"> </span>status
+</code></pre></div>
+<p>Verify Pi is shown as online in the status output.</p>
+<ol>
+<li>
+<p><strong>Check physical connection:</strong> PoE+ cable connected?</p>
+</li>
+<li>
+<p><strong>Check PoE+ power:</strong> LEDs on Pi should be lit</p>
+</li>
+<li>
+<p><strong>Check Tailscale on Pi:</strong></p>
+</li>
+</ol>
+<p>Connect via monitor/keyboard or local network:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tailscale<span class="w"> </span>status
+</code></pre></div>
+<p>If not connected:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tailscale<span class="w"> </span>up
+</code></pre></div>
+<ol>
+<li><strong>Check network configuration on Pi:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>a
+</code></pre></div>
+<p>Verify both local IP and Tailscale IP are assigned.</p>
+<ol>
+<li><strong>Restart Pi:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>reboot
+</code></pre></div>
+<p>Or power cycle (unplug PoE, wait, replug).</p>
+<h3 id="usb-gadget-not-working">USB Gadget Not Working<a class="headerlink" href="#usb-gadget-not-working" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Display doesn't detect USB drive</li>
+<li>Files not accessible</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;cat /sys/kernel/config/usb_gadget/EInkGadget/UDC&#39;</span>
+</code></pre></div>
+<p>Should show UDC name, not empty.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Restart gadget service:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;sudo systemctl restart usb-gadget&#39;</span>
+</code></pre></div>
+<ol>
+<li><strong>Check gadget script:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;sudo /usr/local/bin/gadget.sh&#39;</span>
+</code></pre></div>
+<p>Check for errors.</p>
+<ol>
+<li><strong>Verify module loaded:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;lsmod | grep -E &quot;dwc2|libcomposite&quot;&#39;</span>
+</code></pre></div>
+<p>If missing:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;sudo modprobe dwc2 &amp;&amp; sudo modprobe libcomposite&#39;</span>
+</code></pre></div>
+<ol>
+<li><strong>Check cable:</strong> Try different USB-C cable</li>
+</ol>
+<h3 id="image-not-updating-on-display">Image Not Updating on Display<a class="headerlink" href="#image-not-updating-on-display" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Old image still showing</li>
+<li>New image transferred but not displayed</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;ls -lh /home/&lt;pi_username&gt;/eink_usb/SAMSUNG_E-Paper/&#39;</span>
+</code></pre></div>
+<p>Verify new image exists.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Run refresh script:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;/home/&lt;pi_username&gt;/refresh_script.sh&#39;</span>
+</code></pre></div>
+<ol>
+<li><strong>Check script output</strong> for errors</li>
+<li><strong>Manually refresh display:</strong> Use display menu to refresh</li>
+<li><strong>Verify USB is bound:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;cat /sys/kernel/config/usb_gadget/EInkGadget/UDC&#39;</span>
+</code></pre></div>
+<p>Should not be empty.</p>
+<h2 id="tailscale-issues">Tailscale Issues<a class="headerlink" href="#tailscale-issues" title="Permanent link">&para;</a></h2>
+<h3 id="tailscale-not-connected">Tailscale Not Connected<a class="headerlink" href="#tailscale-not-connected" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Cannot ping Tailscale IPs</li>
+<li>SSH fails over Tailscale</li>
+<li><code>tailscale status</code> shows offline</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<p><strong>On VM (Docker):</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>ps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>tailscale
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tailscale<span class="w"> </span>tailscale<span class="w"> </span>status
+</code></pre></div>
+<p><strong>On VM (native) or Pi:</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tailscale<span class="w"> </span>status
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<p><strong>If Docker container not running:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/IOTstack
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>tailscale
+</code></pre></div>
+<p><strong>If not authenticated:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Docker</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tailscale<span class="w"> </span>tailscale<span class="w"> </span>up
+
+<span class="c1"># Native</span>
+sudo<span class="w"> </span>tailscale<span class="w"> </span>up
+</code></pre></div>
+<p>Follow the authentication link in your browser.</p>
+<p><strong>If service stopped (native install):</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>tailscaled
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>tailscaled
+</code></pre></div>
+<h3 id="tailscale-ip-changed">Tailscale IP Changed<a class="headerlink" href="#tailscale-ip-changed" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>SSH suddenly fails</li>
+<li>Node-RED can't connect to Pi</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<p>Get current IPs:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># On VM</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tailscale<span class="w"> </span>tailscale<span class="w"> </span>ip<span class="w"> </span>-4<span class="w">  </span><span class="c1"># or: tailscale ip -4</span>
+
+<span class="c1"># On Pi</span>
+tailscale<span class="w"> </span>ip<span class="w"> </span>-4
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<p>Tailscale IPs are normally persistent, but if changed:</p>
+<ol>
+<li><strong>Update Node-RED flows</strong> with new Pi Tailscale IP</li>
+<li><strong>Update known_hosts:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>ssh-keyscan<span class="w"> </span>-H<span class="w"> </span>&lt;new_pi_tailscale_ip&gt;<span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.ssh/known_hosts
+</code></pre></div>
+<ol>
+<li><strong>Test connection:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;new_pi_tailscale_ip&gt;
+</code></pre></div>
+<h3 id="tailscale-firewall-blocked">Tailscale Firewall Blocked<a class="headerlink" href="#tailscale-firewall-blocked" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Tailscale won't connect</li>
+<li>Shows "connecting" but never succeeds</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<p>Tailscale needs outbound HTTPS (443) and UDP (41641) access.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Check firewall rules</strong> on VM and Pi</li>
+<li><strong>Contact network administrator</strong> if on restricted network</li>
+<li><strong>Try different network</strong> to isolate issue</li>
+<li><strong>Check logs:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># Docker</span>
+docker<span class="w"> </span>logs<span class="w"> </span>tailscale
+
+<span class="c1"># Native</span>
+sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>tailscaled<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span>
+</code></pre></div>
+<h3 id="devices-cant-see-each-other">Devices Can't See Each Other<a class="headerlink" href="#devices-cant-see-each-other" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Both devices online in Tailscale</li>
+<li>Can't ping each other</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># From VM</span>
+ping<span class="w"> </span>&lt;pi_tailscale_ip&gt;
+
+<span class="c1"># From Pi</span>
+ping<span class="w"> </span>&lt;vm_tailscale_ip&gt;
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Check ACLs</strong> in Tailscale admin console:</li>
+<li>Go to <a href="https://login.tailscale.com/admin/acls">https://login.tailscale.com/admin/acls</a></li>
+<li>
+<p>Ensure devices can communicate</p>
+</li>
+<li>
+<p><strong>Verify both on same tailnet:</strong></p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>tailscale<span class="w"> </span>status
+</code></pre></div>
+<p>Check the tailnet name matches.</p>
+<ol>
+<li><strong>Restart Tailscale</strong> on both devices:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># Docker (VM)</span>
+docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>tailscale
+
+<span class="c1"># Native (Pi)</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>tailscaled
+</code></pre></div>
+<h2 id="display-issues">Display Issues<a class="headerlink" href="#display-issues" title="Permanent link">&para;</a></h2>
+<h3 id="display-not-powering-on">Display Not Powering On<a class="headerlink" href="#display-not-powering-on" title="Permanent link">&para;</a></h3>
+<p>See <a href="../../hardware/poe/#device-not-powering-on">PoE Troubleshooting</a>.</p>
+<h3 id="display-showing-wrong-image">Display Showing Wrong Image<a class="headerlink" href="#display-showing-wrong-image" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Old image displayed</li>
+<li>Image from wrong source</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Check display source:</strong> Ensure USB mode is selected</li>
+<li><strong>Refresh display:</strong> Manually trigger refresh</li>
+<li><strong>Verify image on USB:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;sudo mount -o loop /home/&lt;pi_username&gt;/drive.bin /mnt &amp;&amp; ls -lh /mnt/SAMSUNG_E-Paper/ &amp;&amp; sudo umount /mnt&#39;</span>
+</code></pre></div>
+<h3 id="ghosting-on-display">Ghosting on Display<a class="headerlink" href="#ghosting-on-display" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Previous image faintly visible</li>
+<li>Image blurry or overlapping</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Run full refresh:</strong> Display menu → Screen Refresh</li>
+<li><strong>Enable full refresh mode:</strong> Display settings → Refresh Mode → Full</li>
+<li><strong>Vary content:</strong> Avoid static images for long periods</li>
+</ol>
+<h2 id="performance-issues">Performance Issues<a class="headerlink" href="#performance-issues" title="Permanent link">&para;</a></h2>
+<h3 id="slow-response-times">Slow Response Times<a class="headerlink" href="#slow-response-times" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Grafana slow to load</li>
+<li>Node-RED UI laggy</li>
+<li>API requests timing out</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>stats<span class="w"> </span>--no-stream
+top
+htop
+</code></pre></div>
+<p>Check CPU and memory usage.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Increase VM resources</strong> in Proxmox:</li>
+<li>More CPU cores</li>
+<li>
+<p>More RAM (8GB recommended)</p>
+</li>
+<li>
+<p><strong>Optimize queries</strong> in Grafana (use appropriate time ranges)</p>
+</li>
+<li>
+<p><strong>Reduce Node-RED flow complexity</strong></p>
+</li>
+<li>
+<p><strong>Clean Docker:</strong></p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"> </span>-a
+</code></pre></div>
+<h3 id="high-disk-io">High Disk I/O<a class="headerlink" href="#high-disk-io" title="Permanent link">&para;</a></h3>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>iotop
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Implement InfluxDB retention policy</li>
+<li>Move Docker volumes to faster storage (SSD)</li>
+<li>Reduce write frequency in Node-RED</li>
+</ul>
+<h2 id="data-issues">Data Issues<a class="headerlink" href="#data-issues" title="Permanent link">&para;</a></h2>
+<h3 id="missing-data-in-grafana">Missing Data in Grafana<a class="headerlink" href="#missing-data-in-grafana" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Gaps in graphs</li>
+<li>Some fields missing</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;SELECT * FROM turbine ORDER BY time DESC LIMIT 10&quot;</span>
+</code></pre></div>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Check Node-RED is running</strong> and flows deployed</li>
+<li><strong>Review Node-RED debug</strong> for API errors</li>
+<li><strong>Verify APIs are accessible:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;https://weerlive.nl/api/weerlive_api_v2.php?key=3c2224ecab&amp;locatie=51.89908,4.42348&quot;</span>
+</code></pre></div>
+<h3 id="incorrect-data-values">Incorrect Data Values<a class="headerlink" href="#incorrect-data-values" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Values don't make sense</li>
+<li>Null or NaN values</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<p>Check Node-RED function node for parsing errors:</p>
+<ul>
+<li>Enable debug on function output</li>
+<li>Verify field names match database</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<p>Review and fix function node code (see <a href="../../services/node-red/">Node-RED Configuration</a>).</p>
+<h2 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<h3 id="collect-information">Collect Information<a class="headerlink" href="#collect-information" title="Permanent link">&para;</a></h3>
+<p>Before seeking help, gather:</p>
+<ol>
+<li><strong>Error messages</strong> from logs</li>
+<li><strong>Docker status:</strong> <code>docker compose ps</code></li>
+<li><strong>System info:</strong> <code>uname -a</code>, <code>df -h</code></li>
+<li><strong>Recent changes</strong> made to system</li>
+</ol>
+<h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>IOTstack GitHub:</strong> <a href="https://github.com/SensorsIot/IOTstack/issues">Issues</a></li>
+<li><strong>Node-RED Forum:</strong> <a href="https://discourse.nodered.org/">https://discourse.nodered.org/</a></li>
+<li><strong>Grafana Community:</strong> <a href="https://community.grafana.com/">https://community.grafana.com/</a></li>
+<li><strong>InfluxDB Forums:</strong> <a href="https://community.influxdata.com/">https://community.influxdata.com/</a></li>
+</ul>
+<h3 id="create-support-ticket">Create Support Ticket<a class="headerlink" href="#create-support-ticket" title="Permanent link">&para;</a></h3>
+<p>Include:</p>
+<ul>
+<li>Problem description</li>
+<li>Steps to reproduce</li>
+<li>Logs (relevant sections)</li>
+<li>System configuration</li>
+<li>What you've tried</li>
+</ul>
+<h2 id="emergency-procedures">Emergency Procedures<a class="headerlink" href="#emergency-procedures" title="Permanent link">&para;</a></h2>
+<h3 id="system-recovery">System Recovery<a class="headerlink" href="#system-recovery" title="Permanent link">&para;</a></h3>
+<p>If system is completely broken:</p>
+<ol>
+<li><strong>Restore from Proxmox backup</strong></li>
+<li><strong>Verify services start</strong></li>
+<li><strong>Test each component</strong></li>
+<li><strong>Review what caused failure</strong></li>
+<li><strong>Update procedures to prevent recurrence</strong></li>
+</ol>
+<h3 id="data-loss">Data Loss<a class="headerlink" href="#data-loss" title="Permanent link">&para;</a></h3>
+<p>If InfluxDB data is lost:</p>
+<ol>
+<li><strong>Restore from backup</strong> (if available)</li>
+<li><strong>Accept data loss</strong> and start fresh</li>
+<li><strong>Implement better backup strategy</strong> going forward</li>
+</ol>
+<h3 id="hardware-failure">Hardware Failure<a class="headerlink" href="#hardware-failure" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Identify failed component</strong></li>
+<li><strong>Source replacement</strong></li>
+<li><strong>Install and configure</strong></li>
+<li><strong>Restore from backups</strong></li>
+<li><strong>Document in maintenance log</strong></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

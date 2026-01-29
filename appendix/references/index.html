@@ -1,0 +1,2942 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete setup and maintenance guide for the wind turbine monitoring e-ink display system">
+      
+      
+        <meta name="author" content="Your Name">
+      
+      
+      
+        <link rel="prev" href="../configs/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>References - E-Ink Display IoT System - Internship Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#references" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-header__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            E-Ink Display IoT System - Internship Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              References
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../infrastructure/proxmox/" class="md-tabs__link">
+          
+  
+  
+  Infrastructure Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../services/influxdb/" class="md-tabs__link">
+          
+  
+  
+  Docker Services
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../raspberry-pi/gadget-mode/" class="md-tabs__link">
+          
+  
+  
+  Raspberry Pi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/network/" class="md-tabs__link">
+          
+  
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../maintenance/regular-tasks/" class="md-tabs__link">
+          
+  
+  
+  Maintenance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../configs/" class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-nav__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    E-Ink Display IoT System - Internship Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infrastructure Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/proxmox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox Host
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/vm-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VM Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/iotstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IOTstack Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docker Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/influxdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InfluxDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana-renderer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana Image Renderer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/node-red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node-RED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/portainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Raspberry Pi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/gadget-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gadget Mode Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/ssh-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Topology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/poe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PoE Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Samsung E-Ink Display
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maintenance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/regular-tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendix
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#official-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Official Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Official Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorials &amp; Guides
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorials &amp; Guides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Topics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Community Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forums-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forums &amp; Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#youtube-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YouTube Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools &amp; Utilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools &amp; Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weather-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weather API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#egauge-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eGauge API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Configuration Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Configuration Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-red-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standards-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standards &amp; Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standards &amp; Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montreal-solutions-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montreal Solutions Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Related Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similar-setups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Similar Setups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-stacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative Stacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Glossary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version History
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact &amp; Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contact &amp; Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#internal-contacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal Contacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License Information
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="License Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-source-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Source Licenses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updates-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updates &amp; Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updates &amp; Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keeping-this-reference-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping This Reference Current
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#official-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Official Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Official Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorials &amp; Guides
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorials &amp; Guides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Topics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Community Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forums-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forums &amp; Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#youtube-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YouTube Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools &amp; Utilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools &amp; Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weather-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weather API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#egauge-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eGauge API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Configuration Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Configuration Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-red-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standards-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standards &amp; Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standards &amp; Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#montreal-solutions-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Montreal Solutions Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Related Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similar-setups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Similar Setups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-stacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative Stacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Glossary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version History
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact &amp; Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contact &amp; Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#internal-contacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal Contacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License Information
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="License Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-source-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Source Licenses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updates-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updates &amp; Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updates &amp; Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keeping-this-reference-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping This Reference Current
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h1>
+<p>External resources and documentation links.</p>
+<h2 id="official-documentation">Official Documentation<a class="headerlink" href="#official-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="core-technologies">Core Technologies<a class="headerlink" href="#core-technologies" title="Permanent link">&para;</a></h3>
+<p><strong>Proxmox</strong></p>
+<ul>
+<li>Official Site: <a href="https://www.proxmox.com/">https://www.proxmox.com/</a></li>
+<li>Documentation: <a href="https://pve.proxmox.com/pve-docs/">https://pve.proxmox.com/pve-docs/</a></li>
+<li>Wiki: <a href="https://pve.proxmox.com/wiki/">https://pve.proxmox.com/wiki/</a></li>
+<li>Forum: <a href="https://forum.proxmox.com/">https://forum.proxmox.com/</a></li>
+</ul>
+<p><strong>IOTstack</strong></p>
+<ul>
+<li>GitHub Repository: <a href="https://github.com/SensorsIot/IOTstack">https://github.com/SensorsIot/IOTstack</a></li>
+<li>Installation Guide: <a href="https://sensorsiot.github.io/IOTstack/">https://sensorsiot.github.io/IOTstack/</a></li>
+<li>Discord Community: <a href="https://discord.gg/ZpKHnks">IOTstack Discord</a></li>
+</ul>
+<p><strong>Docker</strong></p>
+<ul>
+<li>Official Site: <a href="https://www.docker.com/">https://www.docker.com/</a></li>
+<li>Documentation: <a href="https://docs.docker.com/">https://docs.docker.com/</a></li>
+<li>Docker Compose: <a href="https://docs.docker.com/compose/">https://docs.docker.com/compose/</a></li>
+<li>Docker Hub: <a href="https://hub.docker.com/">https://hub.docker.com/</a></li>
+</ul>
+<p><strong>Tailscale</strong></p>
+<ul>
+<li>Official Site: <a href="https://tailscale.com/">https://tailscale.com/</a></li>
+<li>Documentation: <a href="https://tailscale.com/kb/">https://tailscale.com/kb/</a></li>
+<li>Download: <a href="https://tailscale.com/download">https://tailscale.com/download</a></li>
+<li>Admin Console: <a href="https://login.tailscale.com/">https://login.tailscale.com/</a></li>
+<li>GitHub: <a href="https://github.com/tailscale/tailscale">https://github.com/tailscale/tailscale</a></li>
+</ul>
+<h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h3>
+<p><strong>InfluxDB</strong></p>
+<ul>
+<li>Official Site: <a href="https://www.influxdata.com/">https://www.influxdata.com/</a></li>
+<li>InfluxDB 1.x Docs: <a href="https://docs.influxdata.com/influxdb/v1.8/">https://docs.influxdata.com/influxdb/v1.8/</a></li>
+<li>InfluxQL Reference: <a href="https://docs.influxdata.com/influxdb/v1.8/query_language/">https://docs.influxdata.com/influxdb/v1.8/query_language/</a></li>
+<li>Community Forum: <a href="https://community.influxdata.com/">https://community.influxdata.com/</a></li>
+</ul>
+<p><strong>Grafana</strong></p>
+<ul>
+<li>Official Site: <a href="https://grafana.com/">https://grafana.com/</a></li>
+<li>Documentation: <a href="https://grafana.com/docs/grafana/latest/">https://grafana.com/docs/grafana/latest/</a></li>
+<li>Dashboard Repository: <a href="https://grafana.com/grafana/dashboards/">https://grafana.com/grafana/dashboards/</a></li>
+<li>Community Forum: <a href="https://community.grafana.com/">https://community.grafana.com/</a></li>
+</ul>
+<p><strong>Grafana Image Renderer</strong></p>
+<ul>
+<li>GitHub: <a href="https://github.com/grafana/grafana-image-renderer">https://github.com/grafana/grafana-image-renderer</a></li>
+<li>Documentation: <a href="https://grafana.com/docs/grafana/latest/setup-grafana/image-rendering/">https://grafana.com/docs/grafana/latest/setup-grafana/image-rendering/</a></li>
+</ul>
+<p><strong>Node-RED</strong></p>
+<ul>
+<li>Official Site: <a href="https://nodered.org/">https://nodered.org/</a></li>
+<li>Documentation: <a href="https://nodered.org/docs/">https://nodered.org/docs/</a></li>
+<li>Flow Library: <a href="https://flows.nodered.org/">https://flows.nodered.org/</a></li>
+<li>Forum: <a href="https://discourse.nodered.org/">https://discourse.nodered.org/</a></li>
+</ul>
+<p><strong>Portainer</strong></p>
+<ul>
+<li>Official Site: <a href="https://www.portainer.io/">https://www.portainer.io/</a></li>
+<li>Documentation: <a href="https://docs.portainer.io/">https://docs.portainer.io/</a></li>
+<li>GitHub: <a href="https://github.com/portainer/portainer">https://github.com/portainer/portainer</a></li>
+</ul>
+<h3 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h3>
+<p><strong>Raspberry Pi</strong></p>
+<ul>
+<li>Official Site: <a href="https://www.raspberrypi.com/">https://www.raspberrypi.com/</a></li>
+<li>Documentation: <a href="https://www.raspberrypi.com/documentation/">https://www.raspberrypi.com/documentation/</a></li>
+<li>USB Gadget Mode: <a href="https://www.kernel.org/doc/html/latest/usb/gadget.html">https://www.kernel.org/doc/html/latest/usb/gadget.html</a></li>
+<li>Forums: <a href="https://forums.raspberrypi.com/">https://forums.raspberrypi.com/</a></li>
+</ul>
+<p><strong>Samsung E-Ink Display</strong></p>
+<ul>
+<li>Samsung Display: <a href="https://www.samsung.com/us/business/displays/">https://www.samsung.com/us/business/displays/</a></li>
+</ul>
+<p><strong>PoE Standards</strong></p>
+<ul>
+<li>IEEE 802.3af (PoE): <a href="https://standards.ieee.org/standard/802_3af-2003.html">https://standards.ieee.org/standard/802_3af-2003.html</a></li>
+<li>IEEE 802.3at (PoE+): <a href="https://standards.ieee.org/standard/802_3at-2009.html">https://standards.ieee.org/standard/802_3at-2009.html</a></li>
+</ul>
+<h2 id="tutorials-guides">Tutorials &amp; Guides<a class="headerlink" href="#tutorials-guides" title="Permanent link">&para;</a></h2>
+<h3 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h3>
+<ul>
+<li>IOTstack Setup Guide: <a href="https://sensorsiot.github.io/IOTstack/Basic_setup/">https://sensorsiot.github.io/IOTstack/Basic_setup/</a></li>
+<li>Docker for Beginners: <a href="https://docker-curriculum.com/">https://docker-curriculum.com/</a></li>
+<li>InfluxDB + Grafana Tutorial: <a href="https://grafana.com/docs/grafana/latest/datasources/influxdb/">https://grafana.com/docs/grafana/latest/datasources/influxdb/</a></li>
+<li>Node-RED Basics: <a href="https://nodered.org/docs/tutorials/">https://nodered.org/docs/tutorials/</a></li>
+<li>Tailscale Quick Start: <a href="https://tailscale.com/kb/1017/install/">https://tailscale.com/kb/1017/install/</a></li>
+<li>Tailscale in Docker: <a href="https://tailscale.com/kb/1282/docker/">https://tailscale.com/kb/1282/docker/</a></li>
+</ul>
+<h3 id="advanced-topics">Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Raspberry Pi USB Gadget: <a href="https://www.isticktoit.net/?p=1383">https://www.isticktoit.net/?p=1383</a></li>
+<li>Proxmox Backup &amp; Restore: <a href="https://pve.proxmox.com/wiki/Backup_and_Restore">https://pve.proxmox.com/wiki/Backup_and_Restore</a></li>
+<li>Docker Networking: <a href="https://docs.docker.com/network/">https://docs.docker.com/network/</a></li>
+<li>InfluxDB Performance Tuning: <a href="https://docs.influxdata.com/influxdb/v1.8/guides/hardware_sizing/">https://docs.influxdata.com/influxdb/v1.8/guides/hardware_sizing/</a></li>
+<li>Tailscale ACLs: <a href="https://tailscale.com/kb/1018/acls/">https://tailscale.com/kb/1018/acls/</a></li>
+<li>Tailscale Exit Nodes: <a href="https://tailscale.com/kb/1103/exit-nodes/">https://tailscale.com/kb/1103/exit-nodes/</a></li>
+</ul>
+<h2 id="community-resources">Community Resources<a class="headerlink" href="#community-resources" title="Permanent link">&para;</a></h2>
+<h3 id="forums-support">Forums &amp; Support<a class="headerlink" href="#forums-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Stack Overflow (Docker): <a href="https://stackoverflow.com/questions/tagged/docker">https://stackoverflow.com/questions/tagged/docker</a></li>
+<li>Stack Overflow (Grafana): <a href="https://stackoverflow.com/questions/tagged/grafana">https://stackoverflow.com/questions/tagged/grafana</a></li>
+<li>Reddit r/homelab: <a href="https://www.reddit.com/r/homelab/">https://www.reddit.com/r/homelab/</a></li>
+<li>Reddit r/selfhosted: <a href="https://www.reddit.com/r/selfhosted/">https://www.reddit.com/r/selfhosted/</a></li>
+</ul>
+<h3 id="youtube-channels">YouTube Channels<a class="headerlink" href="#youtube-channels" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Andreas Spiess (IOTstack creator): <a href="https://www.youtube.com/c/AndreasSpiess">https://www.youtube.com/c/AndreasSpiess</a></li>
+<li>NetworkChuck (Proxmox tutorials): <a href="https://www.youtube.com/c/NetworkChuck">https://www.youtube.com/c/NetworkChuck</a></li>
+<li>Techno Tim (Docker &amp; Self-hosting): <a href="https://www.youtube.com/c/TechnoTimLive">https://www.youtube.com/c/TechnoTimLive</a></li>
+</ul>
+<h2 id="tools-utilities">Tools &amp; Utilities<a class="headerlink" href="#tools-utilities" title="Permanent link">&para;</a></h2>
+<h3 id="network-tools">Network Tools<a class="headerlink" href="#network-tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>nmap</strong>: Network scanning: <a href="https://nmap.org/">https://nmap.org/</a></li>
+<li><strong>iperf3</strong>: Network performance: <a href="https://iperf.fr/">https://iperf.fr/</a></li>
+<li><strong>wireshark</strong>: Packet analysis: <a href="https://www.wireshark.org/">https://www.wireshark.org/</a></li>
+<li><strong>Tailscale</strong>: Mesh VPN: <a href="https://tailscale.com/">https://tailscale.com/</a></li>
+<li><strong>ping/traceroute</strong>: Built-in connectivity testing</li>
+</ul>
+<h3 id="system-monitoring">System Monitoring<a class="headerlink" href="#system-monitoring" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>htop</strong>: Interactive process viewer: <a href="https://htop.dev/">https://htop.dev/</a></li>
+<li><strong>iotop</strong>: I/O monitoring: <a href="http://guichaz.free.fr/iotop/">http://guichaz.free.fr/iotop/</a></li>
+<li><strong>ncdu</strong>: Disk usage analyzer: <a href="https://dev.yorhel.nl/ncdu">https://dev.yorhel.nl/ncdu</a></li>
+</ul>
+<h3 id="backup-tools">Backup Tools<a class="headerlink" href="#backup-tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>rclone</strong>: Cloud sync: <a href="https://rclone.org/">https://rclone.org/</a></li>
+<li><strong>restic</strong>: Backup program: <a href="https://restic.net/">https://restic.net/</a></li>
+<li><strong>Proxmox Backup Server</strong>: <a href="https://www.proxmox.com/en/proxmox-backup-server">https://www.proxmox.com/en/proxmox-backup-server</a></li>
+</ul>
+<h3 id="development-tools">Development Tools<a class="headerlink" href="#development-tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Visual Studio Code</strong>: Code editor: <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
+<li><strong>Postman</strong>: API testing: <a href="https://www.postman.com/">https://www.postman.com/</a></li>
+<li><strong>jq</strong>: JSON processor: <a href="https://stedolan.github.io/jq/">https://stedolan.github.io/jq/</a></li>
+</ul>
+<h2 id="api-documentation">API Documentation<a class="headerlink" href="#api-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="weather-api">Weather API<a class="headerlink" href="#weather-api" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Weerlive API</strong>: <a href="https://weerlive.nl/api/">https://weerlive.nl/api/</a></li>
+<li>Documentation: Contact provider for full API docs</li>
+</ul>
+<h3 id="egauge-api">eGauge API<a class="headerlink" href="#egauge-api" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>eGauge Systems</strong>: <a href="https://www.egauge.net/">https://www.egauge.net/</a></li>
+<li><strong>API Documentation</strong>: See <a href="../../files/egauge-xml-api.pdf">egauge-xml-api.pdf</a> for complete XML API reference</li>
+<li>Endpoint: <code>https://egauge84432.egaug.es/cgi-bin/egauge?inst</code> (instantaneous values)</li>
+<li>Authentication: Digest Auth required</li>
+<li>Response format: XML with register values and metadata</li>
+<li>Documentation includes: Register types, data structures, query parameters, and examples</li>
+</ul>
+<h2 id="project-configuration-files">Project Configuration Files<a class="headerlink" href="#project-configuration-files" title="Permanent link">&para;</a></h2>
+<h3 id="node-red-flow">Node-RED Flow<a class="headerlink" href="#node-red-flow" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>File</strong>: <a href="../../files/flows.json">flows.json</a></li>
+<li><strong>Description</strong>: Complete Node-RED flow configuration for data collection and visualization</li>
+<li><strong>Contents</strong>: HTTP request nodes, InfluxDB integration, Grafana rendering, SSH/SCP commands</li>
+<li><strong>Usage</strong>: Import via Node-RED UI → Menu → Import → Select file</li>
+</ul>
+<h3 id="grafana-dashboard">Grafana Dashboard<a class="headerlink" href="#grafana-dashboard" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>File</strong>: <a href="../../files/dashboard.json">dashboard.json</a></li>
+<li><strong>Description</strong>: Pre-configured Grafana dashboard for wind turbine monitoring</li>
+<li><strong>Contents</strong>: Panels for turbine data, weather information, and system metrics</li>
+<li><strong>Usage</strong>: Import via Grafana UI → Dashboards → Import → Upload JSON file</li>
+</ul>
+<h2 id="security-resources">Security Resources<a class="headerlink" href="#security-resources" title="Permanent link">&para;</a></h2>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Docker Security: <a href="https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html</a></li>
+<li>SSH Hardening: <a href="https://www.ssh.com/academy/ssh/security">https://www.ssh.com/academy/ssh/security</a></li>
+<li>Linux Security: <a href="https://www.cisecurity.org/benchmark/ubuntu_linux">https://www.cisecurity.org/benchmark/ubuntu_linux</a></li>
+</ul>
+<h3 id="security-tools">Security Tools<a class="headerlink" href="#security-tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>fail2ban</strong>: Intrusion prevention: <a href="https://www.fail2ban.org/">https://www.fail2ban.org/</a></li>
+<li><strong>ClamAV</strong>: Antivirus: <a href="https://www.clamav.net/">https://www.clamav.net/</a></li>
+<li><strong>Lynis</strong>: Security auditing: <a href="https://cisofy.com/lynis/">https://cisofy.com/lynis/</a></li>
+</ul>
+<h2 id="standards-specifications">Standards &amp; Specifications<a class="headerlink" href="#standards-specifications" title="Permanent link">&para;</a></h2>
+<h3 id="network-standards">Network Standards<a class="headerlink" href="#network-standards" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>IEEE 802.3</strong>: Ethernet standards</li>
+<li><strong>RFC 791</strong>: Internet Protocol (IP)</li>
+<li><strong>RFC 793</strong>: Transmission Control Protocol (TCP)</li>
+</ul>
+<h3 id="data-formats">Data Formats<a class="headerlink" href="#data-formats" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>JSON</strong>: <a href="https://www.json.org/">https://www.json.org/</a></li>
+<li><strong>YAML</strong>: <a href="https://yaml.org/">https://yaml.org/</a></li>
+<li><strong>XML</strong>: <a href="https://www.w3.org/XML/">https://www.w3.org/XML/</a></li>
+</ul>
+<h2 id="montreal-solutions-documentation">Montreal Solutions Documentation<a class="headerlink" href="#montreal-solutions-documentation" title="Permanent link">&para;</a></h2>
+<p><strong>Wind Turbine Sensors &amp; Equipment</strong></p>
+<p>Montreal Solutions installed and maintains the sensor equipment on the RDM wind turbine.</p>
+<ul>
+<li><strong>Device Manual</strong>: See <a href="../../files/Montreal%20Solutions%20Devices%20Manual%20V1.0-1.pdf">Montreal Solutions Devices Manual V1.0-1.pdf</a></li>
+<li><strong>Wind Turbine Sensors</strong>: Induction sensor, vibration sensor (WitMotion WTVB01-485), rotation sensor (WitMotion WT901C-485)</li>
+<li><strong>Electrical Cabinet</strong>: eGauge EG4015 data logger, Teltonika RUT241 4G modem, RS485-USB converters, power coils</li>
+<li><strong>Connectivity</strong>: Equipment layout, cable connections, and ethernet ports</li>
+<li><strong>Equipment Locations</strong>: Diagrams showing sensor placement and electrical cabinet layout</li>
+<li><strong>Warning</strong>: Warranty void if equipment is altered</li>
+<li><strong>Data Logger Access</strong>: eGauge dashboard for sensor data (see eGauge API section above)</li>
+<li><strong>Internet</strong>: 4G modem with unlimited SIM from Hogeschool Rotterdam</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Equipment Maintenance</p>
+<p>All sensors and devices installed by Montreal Solutions are under warranty. Do not modify their equipment without consulting Montreal Solutions first to avoid voiding the warranty.</p>
+</div>
+<h2 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h2>
+<h3 id="similar-setups">Similar Setups<a class="headerlink" href="#similar-setups" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Home Assistant: <a href="https://www.home-assistant.io/">https://www.home-assistant.io/</a></li>
+<li>OpenHAB: <a href="https://www.openhab.org/">https://www.openhab.org/</a></li>
+<li>Domoticz: <a href="https://www.domoticz.com/">https://www.domoticz.com/</a></li>
+</ul>
+<h3 id="alternative-stacks">Alternative Stacks<a class="headerlink" href="#alternative-stacks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TIG Stack (Telegraf, InfluxDB, Grafana): <a href="https://www.influxdata.com/time-series-platform/">https://www.influxdata.com/time-series-platform/</a></li>
+<li>ELK Stack (Elasticsearch, Logstash, Kibana): <a href="https://www.elastic.co/elk-stack">https://www.elastic.co/elk-stack</a></li>
+<li>Prometheus + Grafana: <a href="https://prometheus.io/">https://prometheus.io/</a></li>
+</ul>
+<h2 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h2>
+<h3 id="common-terms">Common Terms<a class="headerlink" href="#common-terms" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Docker Container</strong>: Lightweight, standalone executable package</li>
+<li><strong>Volume</strong>: Persistent data storage for containers</li>
+<li><strong>PoE+</strong>: Power over Ethernet Plus (IEEE 802.3at)</li>
+<li><strong>E-Ink</strong>: Electronic paper display technology</li>
+<li><strong>USB Gadget Mode</strong>: Linux feature to emulate USB devices</li>
+<li><strong>Time Series Database</strong>: Database optimized for timestamped data</li>
+<li><strong>TSDB</strong>: Time Series Database (abbreviation)</li>
+<li><strong>VM</strong>: Virtual Machine</li>
+<li><strong>HAT</strong>: Hardware Attached on Top (Raspberry Pi expansion board)</li>
+<li><strong>Tailscale</strong>: WireGuard-based mesh VPN service</li>
+<li><strong>Tailnet</strong>: Your private Tailscale network</li>
+<li><strong>CGNAT</strong>: Carrier-Grade NAT (100.x.x.x IP range used by Tailscale)</li>
+<li><strong>Mesh VPN</strong>: Peer-to-peer VPN where devices connect directly</li>
+</ul>
+<h2 id="version-history">Version History<a class="headerlink" href="#version-history" title="Permanent link">&para;</a></h2>
+<h3 id="documentation-versions">Documentation Versions<a class="headerlink" href="#documentation-versions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>v1.0</strong> (January 2026): Initial documentation</li>
+<li>Created during internship</li>
+<li>Covers complete system as deployed</li>
+</ul>
+<h2 id="contact-support">Contact &amp; Support<a class="headerlink" href="#contact-support" title="Permanent link">&para;</a></h2>
+<h3 id="internal-contacts">Internal Contacts<a class="headerlink" href="#internal-contacts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>System Administrator</strong>: Kieran Julien - Computer Science Student - 1048363@hr.nl</li>
+<li><strong>Internship Supervisor</strong>: Johan Antonissen - Energietransitielab CoE HRTech - j.antonissen@hr.nl</li>
+</ul>
+<h3 id="external-support">External Support<a class="headerlink" href="#external-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>IOTstack Community</strong>: Discord, GitHub Issues</li>
+<li><strong>Professional Support</strong>: Consider commercial support for Grafana, InfluxDB if needed</li>
+</ul>
+<h2 id="license-information">License Information<a class="headerlink" href="#license-information" title="Permanent link">&para;</a></h2>
+<h3 id="open-source-licenses">Open Source Licenses<a class="headerlink" href="#open-source-licenses" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Docker</strong>: Apache License 2.0</li>
+<li><strong>Grafana</strong>: AGPLv3</li>
+<li><strong>InfluxDB</strong>: MIT License (v1.x)</li>
+<li><strong>Node-RED</strong>: Apache License 2.0</li>
+<li><strong>Proxmox</strong>: AGPLv3</li>
+<li><strong>Tailscale</strong>: BSD 3-Clause License (client), Proprietary (coordination server)</li>
+</ul>
+<p>Ensure compliance with all applicable licenses.</p>
+<h2 id="updates-maintenance">Updates &amp; Maintenance<a class="headerlink" href="#updates-maintenance" title="Permanent link">&para;</a></h2>
+<h3 id="keeping-this-reference-current">Keeping This Reference Current<a class="headerlink" href="#keeping-this-reference-current" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Review quarterly for broken links</li>
+<li>Update version numbers annually</li>
+<li>Add new resources as discovered</li>
+<li>Remove deprecated links</li>
+</ul>
+<hr />
+<p><strong>Last Updated:</strong> January 2026</p>
+<p>For the most current information, always check official documentation sites.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

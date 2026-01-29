@@ -1,0 +1,3974 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete setup and maintenance guide for the wind turbine monitoring e-ink display system">
+      
+      
+        <meta name="author" content="Your Name">
+      
+      
+      
+        <link rel="prev" href="../troubleshooting/">
+      
+      
+        <link rel="next" href="../../appendix/configs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Backup & Restore - E-Ink Display IoT System - Internship Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#backup-restore" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-header__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            E-Ink Display IoT System - Internship Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Backup & Restore
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../infrastructure/proxmox/" class="md-tabs__link">
+          
+  
+  
+  Infrastructure Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../services/influxdb/" class="md-tabs__link">
+          
+  
+  
+  Docker Services
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../raspberry-pi/gadget-mode/" class="md-tabs__link">
+          
+  
+  
+  Raspberry Pi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/network/" class="md-tabs__link">
+          
+  
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../regular-tasks/" class="md-tabs__link">
+          
+  
+  
+  Maintenance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/configs/" class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-nav__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    E-Ink Display IoT System - Internship Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infrastructure Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/proxmox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox Host
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/vm-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VM Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/iotstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IOTstack Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docker Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/influxdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InfluxDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana-renderer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana Image Renderer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/node-red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node-RED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/portainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Raspberry Pi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/gadget-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gadget Mode Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/ssh-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Topology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/poe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PoE Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Samsung E-Ink Display
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maintenance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regular-tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backup-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-backup-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Backup Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Schedule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxmox-vm-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxmox VM Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxmox VM Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-backup-already-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Backup (Already Configured)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-backup-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify Backup Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-storage-capacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Storage Capacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-backup-for-offsite-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download Backup for Offsite Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influxdb-data-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfluxDB Data Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InfluxDB Data Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid5-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAID5 Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-influxdb-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual InfluxDB Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-docker-volumes-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Docker Volumes Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iotstack-backup-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IOTstack Backup Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-backup-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Backup (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Docker Compose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-node-red-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Node-RED Flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-grafana-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Grafana Dashboards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale State
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restore-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restore Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Restore Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restore-proxmox-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restore Proxmox VM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-docker-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restore Docker Volumes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restore Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restore Raspberry Pi
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disaster Recovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disaster Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-system-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete System Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid5-disk-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAID5 Disk Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid5-complete-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAID5 Complete Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-loss-influxdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Loss (InfluxDB)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-ssd-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External SSD Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offsite-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offsite Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Offsite Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-offsite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Offsite?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Verification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-backups-regularly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Backups Regularly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-storage-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Storage Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-capacity-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Capacity Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Locations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offsite-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offsite Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recovery-time-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Time Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Costs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Costs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Costs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Costs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retention-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retention Policies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Retention Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#short-term-daily" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short-Term (Daily)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-term-weekly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-Term (Weekly)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-monthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Term (Monthly)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendix
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/configs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backup-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-backup-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Backup Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Schedule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxmox-vm-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxmox VM Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxmox VM Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-backup-already-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Backup (Already Configured)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-backup-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify Backup Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-storage-capacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Storage Capacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-backup-for-offsite-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download Backup for Offsite Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influxdb-data-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfluxDB Data Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InfluxDB Data Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid5-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAID5 Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-influxdb-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual InfluxDB Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-docker-volumes-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Docker Volumes Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iotstack-backup-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IOTstack Backup Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-backup-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Backup (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Docker Compose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-node-red-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Node-RED Flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-grafana-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Grafana Dashboards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale State
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restore-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restore Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Restore Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restore-proxmox-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restore Proxmox VM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-docker-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restore Docker Volumes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restore Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-raspberry-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restore Raspberry Pi
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disaster Recovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Disaster Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-system-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete System Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid5-disk-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAID5 Disk Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid5-complete-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAID5 Complete Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-loss-influxdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Loss (InfluxDB)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-ssd-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External SSD Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offsite-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offsite Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Offsite Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-offsite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Offsite?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Verification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-backups-regularly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Backups Regularly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-storage-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Storage Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-capacity-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Capacity Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Locations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Backup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation Backup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offsite-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offsite Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recovery-time-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Time Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Costs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backup Costs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Costs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Costs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retention-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retention Policies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Retention Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#short-term-daily" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short-Term (Daily)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-term-weekly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-Term (Weekly)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-monthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Term (Monthly)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="backup-restore">Backup &amp; Restore<a class="headerlink" href="#backup-restore" title="Permanent link">&para;</a></h1>
+<p>Comprehensive backup and restore procedures.</p>
+<h2 id="backup-strategy">Backup Strategy<a class="headerlink" href="#backup-strategy" title="Permanent link">&para;</a></h2>
+<h3 id="current-backup-infrastructure">Current Backup Infrastructure<a class="headerlink" href="#current-backup-infrastructure" title="Permanent link">&para;</a></h3>
+<p>This system uses two dedicated backup storage solutions:</p>
+<p><strong>1. Proxmox VM Backups:</strong>
+- <strong>Storage</strong>: 2TB external SSD connected to Proxmox host
+- <strong>What</strong>: Complete VM images and configurations
+- <strong>Schedule</strong>: Daily automated backups
+- <strong>Retention</strong>: Last 7 backups</p>
+<p><strong>2. InfluxDB Data Backups:</strong>
+- <strong>Storage</strong>: RAID5 array (5x 2TB SSDs, ~8TB usable capacity)
+- <strong>What</strong>: InfluxDB time-series database
+- <strong>Protection</strong>: RAID5 provides redundancy (can survive 1 disk failure)
+- <strong>Schedule</strong>: Continuous/automated backups</p>
+<h3 id="what-to-backup">What to Backup<a class="headerlink" href="#what-to-backup" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Proxmox VM</strong> → 2TB External SSD</li>
+<li>Complete VM image</li>
+<li>VM configuration</li>
+<li>
+<p>Automated daily snapshots</p>
+</li>
+<li>
+<p><strong>InfluxDB Data</strong> → RAID5 Array</p>
+</li>
+<li>Time-series turbine data</li>
+<li>Weather data</li>
+<li>
+<p>Historical measurements</p>
+</li>
+<li>
+<p><strong>Configuration Files</strong> → Manual/periodic backup</p>
+</li>
+<li><code>docker-compose.yml</code></li>
+<li>Node-RED <code>settings.js</code></li>
+<li>Shell scripts on Raspberry Pi</li>
+<li>
+<p>Grafana dashboards</p>
+</li>
+<li>
+<p><strong>Documentation</strong> → Version control/manual backup</p>
+</li>
+<li>This manual</li>
+<li>Network diagram</li>
+<li>Passwords (encrypted)</li>
+</ol>
+<h3 id="backup-schedule">Backup Schedule<a class="headerlink" href="#backup-schedule" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Storage</th>
+<th>Frequency</th>
+<th>Retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proxmox VM</td>
+<td>2TB External SSD</td>
+<td>Daily (automated)</td>
+<td>Last 7 backups</td>
+</tr>
+<tr>
+<td>InfluxDB data</td>
+<td>RAID5 Array</td>
+<td>Continuous</td>
+<td>All data (RAID5 protected)</td>
+</tr>
+<tr>
+<td>Grafana dashboards</td>
+<td>Manual</td>
+<td>Weekly</td>
+<td>4 weeks</td>
+</tr>
+<tr>
+<td>Node-RED flows</td>
+<td>Manual</td>
+<td>Weekly</td>
+<td>4 weeks</td>
+</tr>
+<tr>
+<td>Configuration files</td>
+<td>Manual</td>
+<td>Weekly</td>
+<td>4 weeks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="proxmox-vm-backup">Proxmox VM Backup<a class="headerlink" href="#proxmox-vm-backup" title="Permanent link">&para;</a></h2>
+<h3 id="current-configuration">Current Configuration<a class="headerlink" href="#current-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>Storage</strong>: 2TB external SSD connected to Proxmox host</p>
+<p>The system is configured to automatically create daily VM backups with 7-day retention.</p>
+<h3 id="automated-backup-already-configured">Automated Backup (Already Configured)<a class="headerlink" href="#automated-backup-already-configured" title="Permanent link">&para;</a></h3>
+<p>The Proxmox backup job is configured with:</p>
+<ul>
+<li><strong>Storage</strong>: 2TB External SSD</li>
+<li><strong>Schedule</strong>: Daily at 2:00 AM</li>
+<li><strong>Mode</strong>: Snapshot (VM continues running during backup)</li>
+<li><strong>Compression</strong>: ZSTD</li>
+<li><strong>Retention</strong>: Keep last 7 backups (oldest is automatically deleted)</li>
+</ul>
+<p>To view/modify configuration:</p>
+<ol>
+<li>Proxmox web UI → <strong>Datacenter</strong> → <strong>Backup</strong></li>
+<li>View existing backup job for the IOTstack VM</li>
+<li>Modify if needed (storage, schedule, retention)</li>
+</ol>
+<h3 id="verify-backup-job">Verify Backup Job<a class="headerlink" href="#verify-backup-job" title="Permanent link">&para;</a></h3>
+<p>Check backup status:</p>
+<ol>
+<li><strong>Datacenter</strong> → <strong>Backup</strong></li>
+<li>View backup history and logs</li>
+<li>Verify last backup completed successfully</li>
+</ol>
+<p>Or via command line:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># List backups</span>
+pvesm<span class="w"> </span>list<span class="w"> </span>&lt;storage-name&gt;
+
+<span class="c1"># View backup logs</span>
+cat<span class="w"> </span>/var/log/pve/tasks/active
+</code></pre></div>
+<h3 id="manual-backup">Manual Backup<a class="headerlink" href="#manual-backup" title="Permanent link">&para;</a></h3>
+<p>If needed, create an additional manual backup:</p>
+<ol>
+<li>Select VM in Proxmox</li>
+<li><strong>Backup</strong> tab</li>
+<li>Click <strong>Backup now</strong></li>
+<li>Choose:</li>
+<li><strong>Storage</strong>: 2TB External SSD</li>
+<li><strong>Mode</strong>: Snapshot (for running VM)</li>
+<li><strong>Compression</strong>: ZSTD</li>
+<li><strong>Note</strong>: Optional description</li>
+<li><strong>Backup</strong></li>
+</ol>
+<p>Backup file format: <code>vzdump-qemu-&lt;vmid&gt;-&lt;timestamp&gt;.vma.zst</code></p>
+<h3 id="backup-storage-capacity">Backup Storage Capacity<a class="headerlink" href="#backup-storage-capacity" title="Permanent link">&para;</a></h3>
+<p><strong>2TB SSD Capacity:</strong>
+- Estimated VM size: ~20-30GB per backup
+- 7 daily backups: ~210GB used
+- Remaining capacity: ~1.8TB available for growth</p>
+<div class="admonition warning">
+<p class="admonition-title">Monitor Storage Usage</p>
+<p>Check external SSD storage usage monthly. If backups grow larger, consider:</p>
+<ul>
+<li>Reducing retention to 5 days</li>
+<li>Cleaning up unused files in VM</li>
+<li>Upgrading to larger external drive</li>
+</ul>
+</div>
+<h3 id="download-backup-for-offsite-storage">Download Backup for Offsite Storage<a class="headerlink" href="#download-backup-for-offsite-storage" title="Permanent link">&para;</a></h3>
+<p>For additional offsite protection:</p>
+<ol>
+<li>SSH to Proxmox host</li>
+<li>Navigate to backup location</li>
+<li>Copy to remote location:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># Find backups on external SSD</span>
+ls<span class="w"> </span>-lh<span class="w"> </span>/mnt/pve/&lt;storage-name&gt;/dump/
+
+<span class="c1"># Copy to offsite location</span>
+scp<span class="w"> </span>/mnt/pve/&lt;storage-name&gt;/dump/vzdump-qemu-*.vma.zst<span class="w"> </span>user@remote:/backups/
+</code></pre></div>
+<h2 id="influxdb-data-backup">InfluxDB Data Backup<a class="headerlink" href="#influxdb-data-backup" title="Permanent link">&para;</a></h2>
+<h3 id="current-configuration_1">Current Configuration<a class="headerlink" href="#current-configuration_1" title="Permanent link">&para;</a></h3>
+<p><strong>Storage</strong>: RAID5 array with 5x 2TB SSDs (~8TB usable capacity)</p>
+<p>The InfluxDB database is stored on a RAID5 array, providing:</p>
+<ul>
+<li><strong>Redundancy</strong>: Can survive 1 disk failure without data loss</li>
+<li><strong>Capacity</strong>: ~8TB usable storage for time-series data</li>
+<li><strong>Performance</strong>: Fast read/write speeds for database operations</li>
+</ul>
+<h3 id="raid5-protection">RAID5 Protection<a class="headerlink" href="#raid5-protection" title="Permanent link">&para;</a></h3>
+<p><strong>How it works:</strong>
+- Data is striped across 4 disks with parity on the 5th
+- If any single disk fails, data can be rebuilt from remaining disks
+- <strong>Critical</strong>: Must replace failed disk promptly before second failure occurs</p>
+<p><strong>Monitor RAID status:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check RAID array status</span>
+cat<span class="w"> </span>/proc/mdstat
+
+<span class="c1"># Detailed RAID information</span>
+sudo<span class="w"> </span>mdadm<span class="w"> </span>--detail<span class="w"> </span>/dev/md0
+
+<span class="c1"># Check for disk errors</span>
+sudo<span class="w"> </span>smartctl<span class="w"> </span>-a<span class="w"> </span>/dev/sda<span class="w">  </span><span class="c1"># Repeat for sdb, sdc, sdd, sde</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">RAID5 Limitations</p>
+<p>RAID5 is NOT a backup - it's redundancy for hardware failure. It does NOT protect against:</p>
+<ul>
+<li>Accidental deletion</li>
+<li>Data corruption</li>
+<li>Ransomware/malware</li>
+<li>Multiple simultaneous disk failures</li>
+</ul>
+<p>Consider periodic manual backups for critical historical data.</p>
+</div>
+<h3 id="manual-influxdb-backup">Manual InfluxDB Backup<a class="headerlink" href="#manual-influxdb-backup" title="Permanent link">&para;</a></h3>
+<p>For additional protection or before major changes:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create portable backup</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influxd<span class="w"> </span>backup<span class="w"> </span>-portable<span class="w"> </span>-database<span class="w"> </span>iot_data<span class="w"> </span>/tmp/influxdb_backup
+
+<span class="c1"># Copy out of container</span>
+docker<span class="w"> </span>cp<span class="w"> </span>influxdb:/tmp/influxdb_backup<span class="w"> </span>./influxdb_backup_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>
+
+<span class="c1"># Compress for storage</span>
+tar<span class="w"> </span>czf<span class="w"> </span>influxdb_backup_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.tar.gz<span class="w"> </span>influxdb_backup_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>
+</code></pre></div>
+<p><strong>Storage recommendations:</strong>
+- Store compressed backups on the 2TB external SSD
+- Keep 2-3 monthly snapshots for historical recovery</p>
+<h3 id="other-docker-volumes-backup">Other Docker Volumes Backup<a class="headerlink" href="#other-docker-volumes-backup" title="Permanent link">&para;</a></h3>
+<p><strong>Grafana dashboards:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>grafana:/var/lib/grafana<span class="w"> </span>./grafana_backup_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>
+</code></pre></div>
+<p><strong>Node-RED flows:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>nodered:/data<span class="w"> </span>./nodered_backup_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>
+</code></pre></div>
+<h3 id="iotstack-backup-script">IOTstack Backup Script<a class="headerlink" href="#iotstack-backup-script" title="Permanent link">&para;</a></h3>
+<p>IOTstack includes a backup script for all volumes:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/IOTstack
+./scripts/backup.sh
+</code></pre></div>
+<p>Creates backup in <code>~/IOTstack/backups/</code>.</p>
+<h3 id="automated-backup-optional">Automated Backup (Optional)<a class="headerlink" href="#automated-backup-optional" title="Permanent link">&para;</a></h3>
+<p>Create cron job for periodic Grafana/Node-RED backups:</p>
+<div class="highlight"><pre><span></span><code>crontab<span class="w"> </span>-e
+</code></pre></div>
+<p>Add:</p>
+<div class="highlight"><pre><span></span><code># Weekly backup of Grafana and Node-RED on Sundays at 3 AM
+0 3 * * 0 docker cp grafana:/var/lib/grafana /backups/grafana_$(date +\%Y\%m\%d)
+0 3 * * 0 docker cp nodered:/data /backups/nodered_$(date +\%Y\%m\%d)
+</code></pre></div>
+<h2 id="configuration-backup">Configuration Backup<a class="headerlink" href="#configuration-backup" title="Permanent link">&para;</a></h2>
+<h3 id="export-docker-compose">Export Docker Compose<a class="headerlink" href="#export-docker-compose" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>~/IOTstack/docker-compose.yml<span class="w"> </span>~/backups/docker-compose_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.yml
+</code></pre></div>
+<h3 id="export-node-red-flows">Export Node-RED Flows<a class="headerlink" href="#export-node-red-flows" title="Permanent link">&para;</a></h3>
+<p>From Node-RED UI:</p>
+<ol>
+<li>Menu → <strong>Export</strong></li>
+<li>Select <strong>all flows</strong></li>
+<li>Download JSON</li>
+</ol>
+<p>Or from command line:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>nodered<span class="w"> </span>cat<span class="w"> </span>/data/flows.json<span class="w"> </span>&gt;<span class="w"> </span>flows_backup_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.json
+</code></pre></div>
+<h3 id="export-grafana-dashboards">Export Grafana Dashboards<a class="headerlink" href="#export-grafana-dashboards" title="Permanent link">&para;</a></h3>
+<p><strong>Via UI:</strong></p>
+<ol>
+<li>Dashboard → Share → Export</li>
+<li>Save JSON</li>
+</ol>
+<p><strong>Via API:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># List dashboards</span>
+curl<span class="w"> </span>-s<span class="w"> </span>http://admin:password@&lt;vm_ip&gt;:3000/api/search?query<span class="o">=</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+
+<span class="c1"># Export specific dashboard</span>
+curl<span class="w"> </span>-s<span class="w"> </span>http://admin:password@&lt;vm_ip&gt;:3000/api/dashboards/uid/&lt;uid&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>&gt;<span class="w"> </span>dashboard_backup_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.json
+</code></pre></div>
+<h3 id="raspberry-pi-scripts">Raspberry Pi Scripts<a class="headerlink" href="#raspberry-pi-scripts" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># From VM</span>
+scp<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;:/home/&lt;pi_username&gt;/*.sh<span class="w"> </span>./pi_scripts_backup/
+scp<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;:/usr/local/bin/gadget.sh<span class="w"> </span>./pi_scripts_backup/
+</code></pre></div>
+<h3 id="tailscale-state">Tailscale State<a class="headerlink" href="#tailscale-state" title="Permanent link">&para;</a></h3>
+<p><strong>If using Docker:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/IOTstack
+sudo<span class="w"> </span>tar<span class="w"> </span>czf<span class="w"> </span>tailscale_state_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.tar.gz<span class="w"> </span>volumes/tailscale/state/
+</code></pre></div>
+<p><strong>If using native install:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># On VM</span>
+sudo<span class="w"> </span>tar<span class="w"> </span>czf<span class="w"> </span>tailscale_state_vm_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.tar.gz<span class="w"> </span>/var/lib/tailscale/
+
+<span class="c1"># On Pi</span>
+ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;sudo tar czf /tmp/tailscale_state_pi.tar.gz /var/lib/tailscale/&#39;</span>
+scp<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;:/tmp/tailscale_state_pi_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.tar.gz<span class="w"> </span>./
+</code></pre></div>
+<p><strong>Note:</strong> Tailscale state includes machine keys and configuration. Backing this up allows quick recovery without re-authentication.</p>
+<h2 id="restore-procedures">Restore Procedures<a class="headerlink" href="#restore-procedures" title="Permanent link">&para;</a></h2>
+<h3 id="restore-proxmox-vm">Restore Proxmox VM<a class="headerlink" href="#restore-proxmox-vm" title="Permanent link">&para;</a></h3>
+<p><strong>Full VM Restore:</strong></p>
+<ol>
+<li>In Proxmox, select target node</li>
+<li><strong>Local</strong> storage → <strong>Backups</strong></li>
+<li>Select backup file</li>
+<li>Click <strong>Restore</strong></li>
+<li>Configure:</li>
+<li><strong>VM ID</strong>: Original or new</li>
+<li><strong>Storage</strong>: local-lvm</li>
+<li>Click <strong>Restore</strong></li>
+<li>Wait for completion</li>
+<li>Start VM</li>
+</ol>
+<p><strong>Partial Restore (extract files):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Extract backup</span>
+vzdump<span class="w"> </span>extract<span class="w"> </span>vzdump-qemu-100-*.vma.zst<span class="w"> </span>/tmp/restore/
+
+<span class="c1"># Mount disk image</span>
+guestmount<span class="w"> </span>-a<span class="w"> </span>/tmp/restore/disk.raw<span class="w"> </span>-i<span class="w"> </span>/mnt/restore/
+
+<span class="c1"># Copy files</span>
+cp<span class="w"> </span>/mnt/restore/path/to/file<span class="w"> </span>/destination/
+
+<span class="c1"># Unmount</span>
+guestunmount<span class="w"> </span>/mnt/restore/
+</code></pre></div>
+<h3 id="restore-docker-volumes">Restore Docker Volumes<a class="headerlink" href="#restore-docker-volumes" title="Permanent link">&para;</a></h3>
+<p><strong>InfluxDB:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>./influxdb_backup_20260107<span class="w"> </span>influxdb:/tmp/restore
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influxd<span class="w"> </span>restore<span class="w"> </span>-portable<span class="w"> </span>-db<span class="w"> </span>iot_data<span class="w"> </span>/tmp/restore
+docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>influxdb
+</code></pre></div>
+<p><strong>Grafana:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>stop<span class="w"> </span>grafana
+docker<span class="w"> </span>cp<span class="w"> </span>./grafana_backup_20260107/.<span class="w"> </span>grafana:/var/lib/grafana/
+docker<span class="w"> </span>compose<span class="w"> </span>start<span class="w"> </span>grafana
+</code></pre></div>
+<p><strong>Node-RED:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>stop<span class="w"> </span>nodered
+docker<span class="w"> </span>cp<span class="w"> </span>./nodered_backup_20260107/.<span class="w"> </span>nodered:/data/
+docker<span class="w"> </span>compose<span class="w"> </span>start<span class="w"> </span>nodered
+</code></pre></div>
+<h3 id="restore-configuration">Restore Configuration<a class="headerlink" href="#restore-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>Docker Compose:</strong></p>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>docker-compose_20260107.yml<span class="w"> </span>~/IOTstack/docker-compose.yml
+<span class="nb">cd</span><span class="w"> </span>~/IOTstack
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<p><strong>Node-RED Flows:</strong></p>
+<ol>
+<li>Node-RED UI → Menu → <strong>Import</strong></li>
+<li>Select <code>flows_backup_20260107.json</code></li>
+<li>Import</li>
+<li>Deploy</li>
+</ol>
+<p><strong>Grafana Dashboards:</strong></p>
+<ol>
+<li>Grafana UI → Dashboards → <strong>Import</strong></li>
+<li>Upload <code>dashboard_backup_20260107.json</code></li>
+<li>Select data source</li>
+<li>Import</li>
+</ol>
+<h3 id="restore-raspberry-pi">Restore Raspberry Pi<a class="headerlink" href="#restore-raspberry-pi" title="Permanent link">&para;</a></h3>
+<p><strong>Scripts:</strong></p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>pi_scripts_backup/*.sh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;:/home/&lt;pi_username&gt;/
+scp<span class="w"> </span>pi_scripts_backup/gadget.sh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;:/tmp/
+ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;sudo mv /tmp/gadget.sh /usr/local/bin/ &amp;&amp; sudo chmod +x /usr/local/bin/gadget.sh&#39;</span>
+</code></pre></div>
+<p><strong>Tailscale State:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># On VM (Docker)</span>
+sudo<span class="w"> </span>tar<span class="w"> </span>xzf<span class="w"> </span>tailscale_state_20260107.tar.gz<span class="w"> </span>-C<span class="w"> </span>~/IOTstack/
+docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>tailscale
+
+<span class="c1"># On VM (native)</span>
+sudo<span class="w"> </span>tar<span class="w"> </span>xzf<span class="w"> </span>tailscale_state_vm_20260107.tar.gz<span class="w"> </span>-C<span class="w"> </span>/
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>tailscaled
+
+<span class="c1"># On Pi</span>
+scp<span class="w"> </span>tailscale_state_pi_20260107.tar.gz<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;:/tmp/
+ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;<span class="w"> </span><span class="s1">&#39;sudo tar xzf /tmp/tailscale_state_pi_20260107.tar.gz -C / &amp;&amp; sudo systemctl restart tailscaled&#39;</span>
+</code></pre></div>
+<p><strong>Note:</strong> After restoring Tailscale state, verify connectivity:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check status</span>
+tailscale<span class="w"> </span>status<span class="w">  </span><span class="c1"># or: docker exec tailscale tailscale status</span>
+
+<span class="c1"># If not authenticated, re-authenticate</span>
+tailscale<span class="w"> </span>up<span class="w">  </span><span class="c1"># or: docker exec tailscale tailscale up</span>
+</code></pre></div>
+<p><strong>Regenerate USB Drive:</strong></p>
+<p>If <code>drive.bin</code> is corrupted:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>&lt;pi_username&gt;@&lt;pi_tailscale_ip&gt;
+sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/home/&lt;pi_username&gt;/drive.bin<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">100</span>
+sudo<span class="w"> </span>mkfs.vfat<span class="w"> </span>/home/&lt;pi_username&gt;/drive.bin
+sudo<span class="w"> </span>mount<span class="w"> </span>-o<span class="w"> </span>loop<span class="w"> </span>/home/&lt;pi_username&gt;/drive.bin<span class="w"> </span>/mnt
+sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/mnt/SAMSUNG_E-Paper
+sudo<span class="w"> </span>umount<span class="w"> </span>/mnt
+</code></pre></div>
+<h2 id="disaster-recovery">Disaster Recovery<a class="headerlink" href="#disaster-recovery" title="Permanent link">&para;</a></h2>
+<h3 id="complete-system-loss">Complete System Loss<a class="headerlink" href="#complete-system-loss" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario</strong>: Proxmox host failure or complete hardware loss</p>
+<p><strong>Recovery Steps:</strong></p>
+<ol>
+<li><strong>Reinstall Proxmox</strong> on new/repaired hardware</li>
+<li><strong>Reconnect 2TB external SSD</strong> to new Proxmox host</li>
+<li><strong>Restore VM from latest backup</strong>:</li>
+<li>In Proxmox: Local storage → Backups</li>
+<li>Select most recent backup from external SSD</li>
+<li>Click Restore, configure VM ID and storage</li>
+<li><strong>Verify VM boots</strong> and all Docker services start</li>
+<li><strong>Check InfluxDB data</strong> integrity (if RAID array survived)</li>
+<li><strong>Test connectivity</strong> to Raspberry Pi via Tailscale</li>
+<li><strong>Verify end-to-end functionality</strong> (data collection → display)</li>
+</ol>
+<p><strong>Time Estimate:</strong> 2-4 hours (if backup storage intact)</p>
+<p><strong>Recovery Time Objective (RTO):</strong> 4 hours<br />
+<strong>Recovery Point Objective (RPO):</strong> 24 hours (last daily backup)</p>
+<h3 id="raid5-disk-failure">RAID5 Disk Failure<a class="headerlink" href="#raid5-disk-failure" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario</strong>: Single disk failure in RAID5 array</p>
+<p><strong>Symptoms:</strong>
+- RAID degraded mode warning
+- System still operational (data accessible)
+- Performance may be reduced</p>
+<p><strong>Recovery Steps:</strong></p>
+<ol>
+<li>
+<p><strong>Identify failed disk</strong>:
+   <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/proc/mdstat
+sudo<span class="w"> </span>mdadm<span class="w"> </span>--detail<span class="w"> </span>/dev/md0
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Order replacement disk</strong> (same size or larger)</p>
+</li>
+<li>
+<p><strong>Replace failed disk</strong>:
+   <div class="highlight"><pre><span></span><code><span class="c1"># Remove failed disk from array</span>
+sudo<span class="w"> </span>mdadm<span class="w"> </span>--manage<span class="w"> </span>/dev/md0<span class="w"> </span>--remove<span class="w"> </span>/dev/sdX
+
+<span class="c1"># Physically replace the disk</span>
+
+<span class="c1"># Add new disk to array</span>
+sudo<span class="w"> </span>mdadm<span class="w"> </span>--manage<span class="w"> </span>/dev/md0<span class="w"> </span>--add<span class="w"> </span>/dev/sdX
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Monitor rebuild</strong>:
+   <div class="highlight"><pre><span></span><code>watch<span class="w"> </span>cat<span class="w"> </span>/proc/mdstat
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Verify array health</strong> after rebuild completes</p>
+</li>
+</ol>
+<p><strong>Time Estimate:</strong> 4-12 hours (depending on rebuild speed)</p>
+<div class="admonition danger">
+<p class="admonition-title">Critical: Act Immediately</p>
+<p>RAID5 can only survive ONE disk failure. If a second disk fails during rebuild, ALL DATA IS LOST. Replace failed disks promptly!</p>
+</div>
+<h3 id="raid5-complete-failure">RAID5 Complete Failure<a class="headerlink" href="#raid5-complete-failure" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario</strong>: Multiple disk failures or RAID controller failure</p>
+<p><strong>Recovery Steps:</strong></p>
+<ol>
+<li><strong>Accept InfluxDB data loss</strong> (if no recent backup exists)</li>
+<li><strong>Restore VM</strong> from 2TB external SSD backup</li>
+<li><strong>Reconfigure RAID5</strong> or use alternative storage</li>
+<li><strong>System starts collecting new data immediately</strong></li>
+<li><strong>Historical data lost</strong> (time-series data unrecoverable without backup)</li>
+</ol>
+<p><strong>Prevention</strong>: Create monthly InfluxDB backups to external SSD</p>
+<h3 id="data-loss-influxdb">Data Loss (InfluxDB)<a class="headerlink" href="#data-loss-influxdb" title="Permanent link">&para;</a></h3>
+<p><strong>If manual backup available:</strong></p>
+<ol>
+<li>Stop InfluxDB: <code>docker compose stop influxdb</code></li>
+<li>Restore from backup:
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influxd<span class="w"> </span>restore<span class="w"> </span>-portable<span class="w"> </span>-db<span class="w"> </span>iot_data<span class="w"> </span>/tmp/restore
+</code></pre></div></li>
+<li>Start InfluxDB: <code>docker compose start influxdb</code></li>
+<li>Verify data: Check Grafana dashboards</li>
+</ol>
+<p><strong>If no backup (RAID5 failed completely):</strong></p>
+<ol>
+<li>Accept historical data loss</li>
+<li>System continues collecting new data</li>
+<li>Dashboards will only show data from restore point forward</li>
+</ol>
+<p><strong>Lesson</strong>: Implement monthly InfluxDB backups to external SSD</p>
+<h3 id="external-ssd-failure">External SSD Failure<a class="headerlink" href="#external-ssd-failure" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario</strong>: 2TB external SSD containing VM backups fails</p>
+<p><strong>Impact:</strong>
+- VM backups lost
+- Active VM still running (no immediate impact)
+- No recovery point if VM fails</p>
+<p><strong>Recovery Steps:</strong></p>
+<ol>
+<li><strong>Replace external SSD immediately</strong></li>
+<li><strong>Reconfigure Proxmox backup job</strong> to new storage</li>
+<li><strong>Create new manual backup</strong> as soon as possible</li>
+<li><strong>Consider implementing offsite backup</strong> to prevent future single-point failure</li>
+</ol>
+<p><strong>Time to Recovery:</strong> Immediate (VM still running), but no safety net until new backup exists</p>
+<h3 id="raspberry-pi-failure">Raspberry Pi Failure<a class="headerlink" href="#raspberry-pi-failure" title="Permanent link">&para;</a></h3>
+<p><strong>Replacement Steps:</strong></p>
+<ol>
+<li><strong>Image new SD card</strong> with Raspberry Pi OS</li>
+<li><strong>Configure network</strong> (static IP, Tailscale)</li>
+<li><strong>Install scripts</strong> from backup</li>
+<li><strong>Configure SSH keys</strong> from VM</li>
+<li><strong>Set up gadget mode</strong> (see <a href="../../raspberry-pi/gadget-mode/">Gadget Mode Setup</a>)</li>
+<li><strong>Test</strong> image transfer and display update</li>
+</ol>
+<p><strong>Time Estimate:</strong> 1-2 hours</p>
+<h2 id="offsite-backup">Offsite Backup<a class="headerlink" href="#offsite-backup" title="Permanent link">&para;</a></h2>
+<h3 id="why-offsite">Why Offsite?<a class="headerlink" href="#why-offsite" title="Permanent link">&para;</a></h3>
+<p>Protects against:</p>
+<ul>
+<li>Physical disaster (fire, flood)</li>
+<li>Theft</li>
+<li>Hardware failure</li>
+</ul>
+<h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h3>
+<p><strong>Cloud Storage:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install rclone</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>rclone
+
+<span class="c1"># Configure cloud provider</span>
+rclone<span class="w"> </span>config
+
+<span class="c1"># Sync backups</span>
+rclone<span class="w"> </span>sync<span class="w"> </span>~/IOTstack/backups/<span class="w"> </span>remote:backups/
+</code></pre></div>
+<p><strong>Remote Server:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Rsync to remote</span>
+rsync<span class="w"> </span>-avz<span class="w"> </span>~/IOTstack/backups/<span class="w"> </span>user@remote-server:/backups/
+</code></pre></div>
+<p><strong>Automated:</strong></p>
+<div class="highlight"><pre><span></span><code>crontab<span class="w"> </span>-e
+</code></pre></div>
+<p>Add:</p>
+<div class="highlight"><pre><span></span><code># Daily offsite backup at 4 AM
+0 4 * * * rclone sync ~/IOTstack/backups/ remote:backups/
+</code></pre></div>
+<h2 id="backup-verification">Backup Verification<a class="headerlink" href="#backup-verification" title="Permanent link">&para;</a></h2>
+<h3 id="test-backups-regularly">Test Backups Regularly<a class="headerlink" href="#test-backups-regularly" title="Permanent link">&para;</a></h3>
+<p><strong>Monthly Test:</strong></p>
+<ol>
+<li>Restore to test VM</li>
+<li>Verify services start</li>
+<li>Check data is accessible</li>
+<li>Delete test VM</li>
+</ol>
+<h3 id="verification-checklist">Verification Checklist<a class="headerlink" href="#verification-checklist" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Backup files are not corrupted</li>
+<li>[ ] Backup size is reasonable (not 0 bytes)</li>
+<li>[ ] Restore completes without errors</li>
+<li>[ ] All services start after restore</li>
+<li>[ ] Data is accessible and current</li>
+<li>[ ] Configuration is preserved</li>
+</ul>
+<h2 id="backup-storage">Backup Storage<a class="headerlink" href="#backup-storage" title="Permanent link">&para;</a></h2>
+<h3 id="current-storage-infrastructure">Current Storage Infrastructure<a class="headerlink" href="#current-storage-infrastructure" title="Permanent link">&para;</a></h3>
+<p><strong>Primary Backup Storage:</strong></p>
+<ol>
+<li><strong>2TB External SSD</strong> (Proxmox VM backups)</li>
+<li>Connected to Proxmox host</li>
+<li>Dedicated for VM snapshots</li>
+<li>Daily automated backups with 7-day retention</li>
+<li>Current usage: ~210GB (7 backups × 30GB each)</li>
+<li>
+<p>Available capacity: ~1.8TB</p>
+</li>
+<li>
+<p><strong>RAID5 Array</strong> (InfluxDB data)</p>
+</li>
+<li>5× 2TB SSDs in RAID5 configuration</li>
+<li>Usable capacity: ~8TB</li>
+<li>Continuous data protection with single-disk failure tolerance</li>
+<li>Current usage: Variable (depends on data retention)</li>
+<li>Dedicated for time-series database storage</li>
+</ol>
+<h3 id="storage-capacity-planning">Storage Capacity Planning<a class="headerlink" href="#storage-capacity-planning" title="Permanent link">&para;</a></h3>
+<p><strong>2TB External SSD:</strong>
+- Estimated VM backup size: 20-30GB per backup
+- 7 daily backups: ~210GB
+- Growth headroom: ~1.8TB available
+- <strong>Recommendation</strong>: Monitor monthly, consider cleanup if usage exceeds 1TB</p>
+<p><strong>RAID5 Array:</strong>
+- InfluxDB growth rate: ~500MB per month (estimate)
+- Current capacity: ~8TB usable
+- <strong>Recommendation</strong>: Monitor RAID status weekly, plan for expansion if usage exceeds 6TB</p>
+<h3 id="storage-monitoring">Storage Monitoring<a class="headerlink" href="#storage-monitoring" title="Permanent link">&para;</a></h3>
+<p><strong>Check External SSD usage:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># On Proxmox host</span>
+df<span class="w"> </span>-h<span class="w"> </span>/mnt/pve/&lt;backup-storage-name&gt;
+</code></pre></div>
+<p><strong>Check RAID5 array usage:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># RAID health</span>
+cat<span class="w"> </span>/proc/mdstat
+sudo<span class="w"> </span>mdadm<span class="w"> </span>--detail<span class="w"> </span>/dev/md0
+
+<span class="c1"># Storage usage</span>
+df<span class="w"> </span>-h<span class="w"> </span>/path/to/raid/mount
+</code></pre></div>
+<h3 id="storage-locations">Storage Locations<a class="headerlink" href="#storage-locations" title="Permanent link">&para;</a></h3>
+<p><strong>Local (Current Setup):</strong></p>
+<ul>
+<li>✅ 2TB External SSD (Proxmox host) - VM backups</li>
+<li>✅ RAID5 Array (8TB usable) - InfluxDB data</li>
+<li>⚠️ <strong>Missing</strong>: Offsite backup location</li>
+</ul>
+<p><strong>Offsite (Recommended):</strong></p>
+<ul>
+<li>Cloud storage (AWS S3, Backblaze B2, Google Drive)</li>
+<li>Remote server at different physical location</li>
+<li>Encrypted external drive stored offsite</li>
+</ul>
+<p><strong>Best Practice:</strong> 3-2-1 Rule</p>
+<ul>
+<li><strong>3</strong> copies of data</li>
+<li>Original (VM/database)</li>
+<li>Local backup (2TB SSD / RAID5)</li>
+<li><strong>Missing: Offsite copy</strong></li>
+<li><strong>2</strong> different media types ✅ (SSD + RAID array)</li>
+<li><strong>1</strong> offsite copy ⚠️ <strong>Not yet implemented</strong></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Offsite Backup Recommended</p>
+<p>Current setup protects against hardware failure but NOT against:</p>
+<ul>
+<li>Physical disaster (fire, flood) at Proxmox location</li>
+<li>Theft of hardware</li>
+<li>Complete site loss</li>
+</ul>
+<p><strong>Action</strong>: Implement periodic offsite backup of critical data (VM snapshots, InfluxDB monthly snapshots)</p>
+</div>
+<h2 id="backup-security">Backup Security<a class="headerlink" href="#backup-security" title="Permanent link">&para;</a></h2>
+<h3 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">&para;</a></h3>
+<p>Encrypt backups before offsite storage:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Encrypt</span>
+gpg<span class="w"> </span>-c<span class="w"> </span>backup_file.tar.gz
+
+<span class="c1"># Decrypt</span>
+gpg<span class="w"> </span>backup_file.tar.gz.gpg
+</code></pre></div>
+<h3 id="access-control">Access Control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Limit who can access backups</li>
+<li>Use strong passwords</li>
+<li>Enable MFA on cloud storage</li>
+</ul>
+<h3 id="audit-logs">Audit Logs<a class="headerlink" href="#audit-logs" title="Permanent link">&para;</a></h3>
+<p>Monitor backup access:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check recent access</span>
+ls<span class="w"> </span>-lt<span class="w"> </span>~/IOTstack/backups/<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+</code></pre></div>
+<h2 id="documentation-backup">Documentation Backup<a class="headerlink" href="#documentation-backup" title="Permanent link">&para;</a></h2>
+<h3 id="critical-documents">Critical Documents<a class="headerlink" href="#critical-documents" title="Permanent link">&para;</a></h3>
+<ul>
+<li>This manual (all markdown files)</li>
+<li>Network diagrams</li>
+<li>Password vault export</li>
+<li>Contact information</li>
+<li>License keys</li>
+</ul>
+<h3 id="version-control">Version Control<a class="headerlink" href="#version-control" title="Permanent link">&para;</a></h3>
+<p>Store documentation in Git:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/docs
+git<span class="w"> </span>init
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit&quot;</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;repository-url&gt;
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+<h3 id="offsite-documentation">Offsite Documentation<a class="headerlink" href="#offsite-documentation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Print important pages</li>
+<li>Store in physical safe</li>
+<li>Share with trusted colleague</li>
+</ul>
+<h2 id="recovery-time-objectives">Recovery Time Objectives<a class="headerlink" href="#recovery-time-objectives" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Target RTO</th>
+<th>Target RPO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single container failure</td>
+<td>5 minutes</td>
+<td>0 (no data loss)</td>
+</tr>
+<tr>
+<td>VM failure</td>
+<td>30 minutes</td>
+<td>24 hours</td>
+</tr>
+<tr>
+<td>Complete system loss</td>
+<td>4 hours</td>
+<td>24 hours</td>
+</tr>
+<tr>
+<td>Data corruption</td>
+<td>1 hour</td>
+<td>24 hours</td>
+</tr>
+</tbody>
+</table>
+<p><strong>RTO:</strong> Recovery Time Objective (how fast can we restore?)
+<strong>RPO:</strong> Recovery Point Objective (how much data can we lose?)</p>
+<h2 id="backup-maintenance">Backup Maintenance<a class="headerlink" href="#backup-maintenance" title="Permanent link">&para;</a></h2>
+<h3 id="regular-tasks">Regular Tasks<a class="headerlink" href="#regular-tasks" title="Permanent link">&para;</a></h3>
+<p><strong>Weekly:</strong></p>
+<ul>
+<li>Verify backups completed successfully</li>
+<li>Check backup storage usage</li>
+</ul>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>Test restore procedure</li>
+<li>Review backup retention</li>
+<li>Clean old backups</li>
+</ul>
+<p><strong>Quarterly:</strong></p>
+<ul>
+<li>Review backup strategy</li>
+<li>Update documentation</li>
+<li>Test disaster recovery plan</li>
+</ul>
+<h3 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h3>
+<p>Set up alerts for:</p>
+<ul>
+<li>Backup job failures</li>
+<li>Low disk space on backup storage</li>
+<li>Backup age &gt;48 hours</li>
+</ul>
+<h2 id="backup-costs">Backup Costs<a class="headerlink" href="#backup-costs" title="Permanent link">&para;</a></h2>
+<h3 id="storage-costs">Storage Costs<a class="headerlink" href="#storage-costs" title="Permanent link">&para;</a></h3>
+<p>Estimate monthly:</p>
+<ul>
+<li>Local NAS: $0 (one-time hardware cost)</li>
+<li>Cloud storage (250GB): $5-15/month</li>
+<li>Remote server: $10-50/month</li>
+</ul>
+<h3 id="time-costs">Time Costs<a class="headerlink" href="#time-costs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Setup: 4 hours initially</li>
+<li>Maintenance: 1 hour/month</li>
+<li>Testing: 2 hours/quarter</li>
+</ul>
+<h2 id="retention-policies">Retention Policies<a class="headerlink" href="#retention-policies" title="Permanent link">&para;</a></h2>
+<h3 id="short-term-daily">Short-Term (Daily)<a class="headerlink" href="#short-term-daily" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Keep 7 days of daily backups</li>
+<li>Automatic deletion of older backups</li>
+</ul>
+<h3 id="medium-term-weekly">Medium-Term (Weekly)<a class="headerlink" href="#medium-term-weekly" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Keep 4 weeks of weekly backups</li>
+<li>Manually delete older backups</li>
+</ul>
+<h3 id="long-term-monthly">Long-Term (Monthly)<a class="headerlink" href="#long-term-monthly" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Keep 3-12 months of monthly backups</li>
+<li>Archive to cheaper storage</li>
+</ul>
+<h3 id="script-example">Script Example<a class="headerlink" href="#script-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># cleanup_old_backups.sh</span>
+
+<span class="nv">BACKUP_DIR</span><span class="o">=</span>~/IOTstack/backups
+<span class="nv">DAYS_TO_KEEP</span><span class="o">=</span><span class="m">7</span>
+
+find<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BACKUP_DIR</span><span class="s2">&quot;</span><span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.tar.gz&quot;</span><span class="w"> </span>-mtime<span class="w"> </span>+<span class="nv">$DAYS_TO_KEEP</span><span class="w"> </span>-delete
+</code></pre></div>
+<p>Run via cron:</p>
+<div class="highlight"><pre><span></span><code>0 5 * * 0 /path/to/cleanup_old_backups.sh
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

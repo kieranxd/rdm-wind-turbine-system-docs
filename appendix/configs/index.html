@@ -1,0 +1,3372 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete setup and maintenance guide for the wind turbine monitoring e-ink display system">
+      
+      
+        <meta name="author" content="Your Name">
+      
+      
+      
+        <link rel="prev" href="../../maintenance/backup/">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Configuration Files - E-Ink Display IoT System - Internship Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration-files" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-header__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            E-Ink Display IoT System - Internship Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration Files
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../infrastructure/proxmox/" class="md-tabs__link">
+          
+  
+  
+  Infrastructure Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../services/influxdb/" class="md-tabs__link">
+          
+  
+  
+  Docker Services
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../raspberry-pi/gadget-mode/" class="md-tabs__link">
+          
+  
+  
+  Raspberry Pi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/network/" class="md-tabs__link">
+          
+  
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../maintenance/regular-tasks/" class="md-tabs__link">
+          
+  
+  
+  Maintenance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="E-Ink Display IoT System - Internship Documentation" class="md-nav__button md-logo" aria-label="E-Ink Display IoT System - Internship Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    E-Ink Display IoT System - Internship Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infrastructure Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/proxmox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox Host
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/vm-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VM Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/iotstack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IOTstack Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docker Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/influxdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InfluxDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/grafana-renderer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana Image Renderer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/node-red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node-RED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/portainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Raspberry Pi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/gadget-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gadget Mode Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberry-pi/ssh-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Topology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/poe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PoE Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Samsung E-Ink Display
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maintenance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/regular-tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendix
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Compose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-red-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node-RED Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Sections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana Environment Variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grafana Environment Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-for-image-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required for Image Rendering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-network-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi Network Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspberry Pi Network Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-ip-dhcpcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static IP (dhcpcd)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-ip-netplan-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static IP (Netplan - Ubuntu)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-boot-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi Boot Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tailscale-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tailscale Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-vm-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On VM (Docker)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-raspberry-pi-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On Raspberry Pi (Native)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-network-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Network IPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemd-service-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd Service Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Systemd Service Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb-gadget-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB Gadget Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-server-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Server Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorized-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorized Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sudo-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sudo Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewall-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firewall Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Firewall Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ufw-uncomplicated-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UFW (Uncomplicated Firewall)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cron-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cron Jobs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cron Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automated-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influxdb-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfluxDB Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InfluxDB Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retention-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retention Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Variables Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana-image-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana Image Renderer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-locations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Locations Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Credentials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Credentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#egauge-xml-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eGauge XML API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weather API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Compose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-red-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node-RED Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Sections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana Environment Variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grafana Environment Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-for-image-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required for Image Rendering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-network-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi Network Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspberry Pi Network Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-ip-dhcpcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static IP (dhcpcd)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-ip-netplan-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static IP (Netplan - Ubuntu)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-boot-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi Boot Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tailscale-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tailscale Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-vm-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On VM (Docker)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-raspberry-pi-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On Raspberry Pi (Native)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale-network-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale Network IPs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemd-service-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd Service Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Systemd Service Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb-gadget-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB Gadget Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-server-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH Server Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorized-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorized Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sudo-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sudo Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewall-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firewall Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Firewall Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ufw-uncomplicated-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UFW (Uncomplicated Firewall)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cron-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cron Jobs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cron Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automated-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influxdb-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InfluxDB Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="InfluxDB Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retention-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retention Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Variables Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana-image-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grafana Image Renderer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node-RED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailscale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-locations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Locations Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Credentials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Credentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#egauge-xml-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eGauge XML API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weather API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h1>
+<p>Reference for all key configuration files in the system.</p>
+<h2 id="docker-compose">Docker Compose<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h2>
+<p><strong>Location:</strong> <code>~/IOTstack/docker-compose.yml</code></p>
+<div class="admonition note">
+<p class="admonition-title">Authentication Tokens</p>
+<p>Replace <code>YOUR_RENDERER_TOKEN_HERE</code> and <code>YOUR_AUTH_TOKEN_HERE</code> with actual tokens in production.</p>
+</div>
+<h3 id="complete-configuration">Complete Configuration<a class="headerlink" href="#complete-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">networks</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">iotstack_default</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;iotstack_default&quot;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">grafana</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">cap_drop</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;AUDIT_CONTROL&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;BLOCK_SUSPEND&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;DAC_READ_SEARCH&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;IPC_LOCK&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;IPC_OWNER&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;LEASE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;LINUX_IMMUTABLE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;MAC_ADMIN&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;MAC_OVERRIDE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NET_ADMIN&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NET_BROADCAST&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYSLOG&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_ADMIN&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_BOOT&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_MODULE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_NICE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_PACCT&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_PTRACE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_RAWIO&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_RESOURCE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_TIME&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_TTY_CONFIG&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;WAKE_ALARM&quot;</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;grafana&quot;</span>
+<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/run.sh&quot;</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;TZ=Etc/UTC&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;GF_PATHS_DATA=/var/lib/grafana&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;GF_PATHS_LOGS=/var/log/grafana&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;PATH=/usr/share/grafana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;GF_PATHS_CONFIG=/etc/grafana/grafana.ini&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;GF_PATHS_HOME=/usr/share/grafana&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;GF_PATHS_PLUGINS=/var/lib/grafana/plugins&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;GF_PATHS_PROVISIONING=/etc/grafana/provisioning&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;GF_RENDERING_SERVER_URL=http://145.24.180.60:8081/render&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;GF_RENDERING_CALLBACK_URL=http://145.24.180.60:3000/&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;GF_RENDERING_RENDERER_TOKEN=YOUR_RENDERER_TOKEN_HERE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;GF_SERVER_DOMAIN=145.24.180.60&quot;</span>
+<span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;568c217d58c8&quot;</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;grafana/grafana:latest&quot;</span>
+<span class="w">    </span><span class="nt">ipc</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;private&quot;</span>
+<span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">maintainer</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Grafana</span><span class="nv"> </span><span class="s">Labs</span><span class="nv"> </span><span class="s">&lt;hello@grafana.com&gt;&quot;</span>
+<span class="w">      </span><span class="nt">org.opencontainers.image.source</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/grafana/grafana&quot;</span>
+<span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;json-file&quot;</span>
+<span class="w">      </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;iotstack_default&quot;</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;3000:3000/tcp&quot;</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;unless-stopped&quot;</span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/home/iotuser/IOTstack/volumes/grafana/data:/var/lib/grafana&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/home/iotuser/IOTstack/volumes/grafana/log:/var/log/grafana&quot;</span>
+<span class="w">    </span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/usr/share/grafana&quot;</span>
+<span class="w">  </span><span class="nt">influxdb</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;influxd&quot;</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;influxdb&quot;</span>
+<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/entrypoint.sh&quot;</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;INFLUXDB_REPORTING_DISABLED=false&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;INFLUXDB_HTTP_AUTH_ENABLED=false&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;INFLUXDB_MONITOR_STORE_ENABLED=FALSE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;TZ=Etc/UTC&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;INFLUXDB_HTTP_FLUX_ENABLED=false&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span>
+<span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;f5dd8a03e804&quot;</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;influxdb:1.11&quot;</span>
+<span class="w">    </span><span class="nt">ipc</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;private&quot;</span>
+<span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;json-file&quot;</span>
+<span class="w">      </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;iotstack_default&quot;</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8086:8086/tcp&quot;</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;unless-stopped&quot;</span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/home/iotuser/IOTstack/backups/influxdb/db:/var/lib/influxdb/backup&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/home/iotuser/IOTstack/volumes/influxdb/data:/var/lib/influxdb&quot;</span>
+<span class="w">  </span><span class="nt">nodered</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">cap_drop</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;AUDIT_CONTROL&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;BLOCK_SUSPEND&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;DAC_READ_SEARCH&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;IPC_LOCK&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;IPC_OWNER&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;LEASE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;LINUX_IMMUTABLE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;MAC_ADMIN&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;MAC_OVERRIDE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NET_ADMIN&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NET_BROADCAST&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYSLOG&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_ADMIN&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_BOOT&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_MODULE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_NICE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_PACCT&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_PTRACE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_RAWIO&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_RESOURCE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_TIME&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_TTY_CONFIG&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;WAKE_ALARM&quot;</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;nodered&quot;</span>
+<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./entrypoint.sh&quot;</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;TZ=Europe/Amsterdam&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NODE_OPTIONS=--dns-result-order=ipv4first&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;PATH=/usr/src/node-red/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NODE_VERSION=20.19.5&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;YARN_VERSION=1.22.22&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NODE_RED_VERSION=v4.1.1&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;FLOWS=flows.json&quot;</span>
+<span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0b07c52e9073&quot;</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;iotstack-nodered:latest&quot;</span>
+<span class="w">    </span><span class="nt">ipc</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;private&quot;</span>
+<span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">authors</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Dave</span><span class="nv"> </span><span class="s">Conway-Jones,</span><span class="nv"> </span><span class="s">Nick</span><span class="nv"> </span><span class="s">O&#39;Leary,</span><span class="nv"> </span><span class="s">James</span><span class="nv"> </span><span class="s">Thomas,</span><span class="nv"> </span><span class="s">Raymond</span><span class="nv"> </span><span class="s">Mouthaan&quot;</span>
+<span class="w">      </span><span class="nt">org.opencontainers.image.source</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/node-red/node-red-docker&quot;</span>
+<span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;json-file&quot;</span>
+<span class="w">      </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">    </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;host&quot;</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;1880:1880/tcp&quot;</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;unless-stopped&quot;</span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/home/iotuser/IOTstack/volumes/nodered/data:/data&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/home/iotuser/IOTstack/volumes/nodered/ssh:/root/.ssh&quot;</span>
+<span class="w">    </span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/usr/src/node-red&quot;</span>
+<span class="w">  </span><span class="nt">portainer-ce</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;portainer-ce&quot;</span>
+<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/portainer&quot;</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span>
+<span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;9dd856bf4ddd&quot;</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;portainer/portainer-ce&quot;</span>
+<span class="w">    </span><span class="nt">ipc</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;private&quot;</span>
+<span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">io.portainer.server</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">org.opencontainers.image.description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Docker</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">management</span><span class="nv"> </span><span class="s">made</span><span class="nv"> </span><span class="s">simple,</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">world&#39;s</span><span class="nv"> </span><span class="s">most</span><span class="nv"> </span><span class="s">popular</span><span class="nv"> </span><span class="s">GUI-based</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">management</span><span class="nv"> </span><span class="s">platform.&quot;</span>
+<span class="w">      </span><span class="nt">org.opencontainers.image.title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Portainer&quot;</span>
+<span class="w">      </span><span class="nt">org.opencontainers.image.vendor</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Portainer.io&quot;</span>
+<span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;json-file&quot;</span>
+<span class="w">      </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;iotstack_default&quot;</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8000:8000/tcp&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;9000:9000/tcp&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;9443:9443/tcp&quot;</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;unless-stopped&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/home/iotuser/IOTstack/volumes/portainer-ce/data:/data&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/var/run/docker.sock:/var/run/docker.sock&quot;</span>
+<span class="w">    </span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/&quot;</span>
+<span class="w">  </span><span class="nt">renderer</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">cap_drop</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;AUDIT_CONTROL&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;BLOCK_SUSPEND&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;DAC_READ_SEARCH&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;IPC_LOCK&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;IPC_OWNER&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;LEASE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;LINUX_IMMUTABLE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;MAC_ADMIN&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;MAC_OVERRIDE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NET_ADMIN&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;NET_BROADCAST&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYSLOG&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_ADMIN&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_BOOT&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_MODULE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_NICE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_PACCT&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_PTRACE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_RAWIO&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_RESOURCE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_TIME&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SYS_TTY_CONFIG&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;WAKE_ALARM&quot;</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;server&quot;</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;renderer&quot;</span>
+<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;tini&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;--&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;/usr/bin/grafana-image-renderer&quot;</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;CHROME_BIN=/usr/bin/chromium&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;LANG=en_US.UTF-8&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;LC_ALL=en_US.UTF-8&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;AUTH_TOKEN=YOUR_AUTH_TOKEN_HERE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;TZ=Europe/Amsterdam&quot;</span>
+<span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3a5022bd091e&quot;</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;grafana/grafana-image-renderer:latest&quot;</span>
+<span class="w">    </span><span class="nt">ipc</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;private&quot;</span>
+<span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">maintainer</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Grafana</span><span class="nv"> </span><span class="s">team</span><span class="nv"> </span><span class="s">&lt;hello@grafana.com&gt;&quot;</span>
+<span class="w">      </span><span class="nt">org.opencontainers.image.source</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/grafana/grafana-image-renderer/tree/master/Dockerfile&quot;</span>
+<span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;json-file&quot;</span>
+<span class="w">      </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;iotstack_default&quot;</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8081:8081/tcp&quot;</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;unless-stopped&quot;</span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;65532&quot;</span>
+<span class="w">    </span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/home/nonroot&quot;</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.6&quot;</span>
+</code></pre></div>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Update IP addresses to match your network</li>
+<li>Adjust volume paths as needed</li>
+</ul>
+<h2 id="node-red-settings">Node-RED Settings<a class="headerlink" href="#node-red-settings" title="Permanent link">&para;</a></h2>
+<p><strong>Location:</strong> <code>~/IOTstack/volumes/nodered/data/settings.js</code></p>
+<h3 id="key-sections">Key Sections<a class="headerlink" href="#key-sections" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Server settings</span>
+<span class="w">    </span><span class="nx">uiPort</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">1880</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// Security</span>
+<span class="w">    </span><span class="nx">adminAuth</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;credentials&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">users</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">            </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$2b$08$...&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1">// Generated hash</span>
+<span class="w">            </span><span class="nx">permissions</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>
+<span class="w">        </span><span class="p">}]</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="c1">// Editor settings</span>
+<span class="w">    </span><span class="nx">editorTheme</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">projects</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="c1">// Logging</span>
+<span class="w">    </span><span class="nx">logging</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">level</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;info&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">metrics</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">audit</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="c1">// Context storage</span>
+<span class="w">    </span><span class="nx">contextStorage</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;memory&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="grafana-environment-variables">Grafana Environment Variables<a class="headerlink" href="#grafana-environment-variables" title="Permanent link">&para;</a></h2>
+<h3 id="required-for-image-rendering">Required for Image Rendering<a class="headerlink" href="#required-for-image-rendering" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nv">GF_SERVER_DOMAIN</span><span class="o">=</span><span class="m">192</span>.168.178.164
+<span class="nv">GF_SERVER_ROOT_URL</span><span class="o">=</span>http://192.168.178.164:3000/
+<span class="nv">GF_SERVER_SERVE_FROM_SUB_PATH</span><span class="o">=</span><span class="nb">false</span>
+<span class="nv">GF_RENDERING_SERVER_URL</span><span class="o">=</span>http://grafana-image-renderer:8081/render
+<span class="nv">GF_RENDERING_CALLBACK_URL</span><span class="o">=</span>http://192.168.178.164:3000/
+<span class="nv">GF_RENDERING_RENDERER_TOKEN</span><span class="o">=</span>glsa_AzyNQ7uhzHzg4UCe5KC8fHUAiJPGjBaz_0d0c9ffb
+</code></pre></div>
+<h3 id="optional-settings">Optional Settings<a class="headerlink" href="#optional-settings" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Anonymous access</span>
+<span class="nv">GF_AUTH_ANONYMOUS_ENABLED</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">GF_AUTH_ANONYMOUS_ORG_ROLE</span><span class="o">=</span>Viewer
+
+<span class="c1"># SMTP for alerts</span>
+<span class="nv">GF_SMTP_ENABLED</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">GF_SMTP_HOST</span><span class="o">=</span>smtp.gmail.com:587
+<span class="nv">GF_SMTP_USER</span><span class="o">=</span>your-email@gmail.com
+<span class="nv">GF_SMTP_PASSWORD</span><span class="o">=</span>your-app-password
+<span class="nv">GF_SMTP_FROM_ADDRESS</span><span class="o">=</span>your-email@gmail.com
+</code></pre></div>
+<h2 id="raspberry-pi-network-configuration">Raspberry Pi Network Configuration<a class="headerlink" href="#raspberry-pi-network-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="static-ip-dhcpcd">Static IP (dhcpcd)<a class="headerlink" href="#static-ip-dhcpcd" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>/etc/dhcpcd.conf</code></p>
+<div class="highlight"><pre><span></span><code>interface<span class="w"> </span>eth0
+static<span class="w"> </span><span class="nv">ip_address</span><span class="o">=</span><span class="m">192</span>.168.178.148/24
+static<span class="w"> </span><span class="nv">routers</span><span class="o">=</span><span class="m">192</span>.168.178.1
+static<span class="w"> </span><span class="nv">domain_name_servers</span><span class="o">=</span><span class="m">8</span>.8.8.8<span class="w"> </span><span class="m">8</span>.8.4.4
+</code></pre></div>
+<h3 id="static-ip-netplan-ubuntu">Static IP (Netplan - Ubuntu)<a class="headerlink" href="#static-ip-netplan-ubuntu" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>/etc/netplan/01-netcfg.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">network</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkd</span>
+<span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">eth0</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span>
+<span class="w">      </span><span class="nt">addresses</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.178.148/24</span>
+<span class="w">      </span><span class="nt">gateway4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.178.1</span>
+<span class="w">      </span><span class="nt">nameservers</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">addresses</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.8.4.4</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>netplan<span class="w"> </span>apply
+</code></pre></div>
+<h2 id="raspberry-pi-boot-configuration">Raspberry Pi Boot Configuration<a class="headerlink" href="#raspberry-pi-boot-configuration" title="Permanent link">&para;</a></h2>
+<p><strong>Location:</strong> <code>/boot/config.txt</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Enable USB gadget mode</span>
+<span class="nv">dtoverlay</span><span class="o">=</span>dwc2
+
+<span class="c1"># PoE HAT fan control</span>
+<span class="nv">dtparam</span><span class="o">=</span><span class="nv">poe_fan_temp0</span><span class="o">=</span><span class="m">60000</span>
+<span class="nv">dtparam</span><span class="o">=</span><span class="nv">poe_fan_temp1</span><span class="o">=</span><span class="m">65000</span>
+<span class="nv">dtparam</span><span class="o">=</span><span class="nv">poe_fan_temp2</span><span class="o">=</span><span class="m">70000</span>
+<span class="nv">dtparam</span><span class="o">=</span><span class="nv">poe_fan_temp3</span><span class="o">=</span><span class="m">75000</span>
+</code></pre></div>
+<p><strong>Location:</strong> <code>/boot/cmdline.txt</code></p>
+<div class="highlight"><pre><span></span><code>console=serial0,115200 console=tty1 root=PARTUUID=... rootfstype=ext4 fsck.repair=yes rootwait modules-load=dwc2,libcomposite
+</code></pre></div>
+<h2 id="tailscale-configuration">Tailscale Configuration<a class="headerlink" href="#tailscale-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="on-vm-docker">On VM (Docker)<a class="headerlink" href="#on-vm-docker" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>~/IOTstack/docker-compose.yml</code> (see Docker Compose section above)</p>
+<p><strong>Authenticate:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tailscale<span class="w"> </span>tailscale<span class="w"> </span>up
+</code></pre></div>
+<p><strong>Get Tailscale IP:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tailscale<span class="w"> </span>tailscale<span class="w"> </span>ip<span class="w"> </span>-4
+</code></pre></div>
+<p><strong>Check status:</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tailscale<span class="w"> </span>tailscale<span class="w"> </span>status
+</code></pre></div>
+<h3 id="on-raspberry-pi-native">On Raspberry Pi (Native)<a class="headerlink" href="#on-raspberry-pi-native" title="Permanent link">&para;</a></h3>
+<p><strong>Install:</strong></p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://tailscale.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+sudo<span class="w"> </span>tailscale<span class="w"> </span>up
+</code></pre></div>
+<p><strong>Get Tailscale IP:</strong></p>
+<div class="highlight"><pre><span></span><code>tailscale<span class="w"> </span>ip<span class="w"> </span>-4
+</code></pre></div>
+<p><strong>Check status:</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tailscale<span class="w"> </span>status
+</code></pre></div>
+<p><strong>Enable on boot:</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>tailscaled
+</code></pre></div>
+<h3 id="tailscale-network-ips">Tailscale Network IPs<a class="headerlink" href="#tailscale-network-ips" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>VM Tailscale IP</strong>: e.g., <code>100.64.1.10</code> (assigned automatically)</li>
+<li><strong>Raspberry Pi Tailscale IP</strong>: e.g., <code>100.64.1.5</code> (assigned automatically)</li>
+<li><strong>IP Range</strong>: Typically <code>100.x.x.x</code> (Tailscale CGNAT range)</li>
+</ul>
+<h2 id="systemd-service-files">Systemd Service Files<a class="headerlink" href="#systemd-service-files" title="Permanent link">&para;</a></h2>
+<h3 id="usb-gadget-service">USB Gadget Service<a class="headerlink" href="#usb-gadget-service" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>/etc/systemd/system/usb-gadget.service</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">USB Gadget Mode Configuration</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+
+<span class="k">[Service]</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">oneshot</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/gadget.sh</span>
+<span class="na">RemainAfterExit</span><span class="o">=</span><span class="s">yes</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+<p>Enable:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>usb-gadget.service
+</code></pre></div>
+<h2 id="ssh-configuration">SSH Configuration<a class="headerlink" href="#ssh-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="ssh-server-config">SSH Server Config<a class="headerlink" href="#ssh-server-config" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>/etc/ssh/sshd_config</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Security settings</span>
+PasswordAuthentication<span class="w"> </span>no
+PubkeyAuthentication<span class="w"> </span>yes
+PermitRootLogin<span class="w"> </span>no
+ChallengeResponseAuthentication<span class="w"> </span>no
+
+<span class="c1"># Performance</span>
+UseDNS<span class="w"> </span>no
+</code></pre></div>
+<p>Restart SSH:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
+</code></pre></div>
+<h3 id="authorized-keys">Authorized Keys<a class="headerlink" href="#authorized-keys" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>~/.ssh/authorized_keys</code></p>
+<div class="highlight"><pre><span></span><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... node-red@iotstack
+</code></pre></div>
+<p>Permissions:</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/authorized_keys
+</code></pre></div>
+<h2 id="sudo-configuration">Sudo Configuration<a class="headerlink" href="#sudo-configuration" title="Permanent link">&para;</a></h2>
+<p><strong>Location:</strong> <code>/etc/sudoers.d/nopasswd</code></p>
+<div class="highlight"><pre><span></span><code>hrtech<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/usr/bin/tee
+hrtech<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/usr/bin/mount
+hrtech<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/usr/bin/umount
+hrtech<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/usr/bin/mkdir
+hrtech<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/bin/rm
+hrtech<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/bin/cp
+</code></pre></div>
+<p>Create with:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>visudo<span class="w"> </span>-f<span class="w"> </span>/etc/sudoers.d/nopasswd
+</code></pre></div>
+<h2 id="firewall-rules">Firewall Rules<a class="headerlink" href="#firewall-rules" title="Permanent link">&para;</a></h2>
+<h3 id="ufw-uncomplicated-firewall">UFW (Uncomplicated Firewall)<a class="headerlink" href="#ufw-uncomplicated-firewall" title="Permanent link">&para;</a></h3>
+<p><strong>On VM:</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.178.0/24<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">3000</span><span class="w">  </span><span class="c1"># Grafana</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.178.0/24<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">8086</span><span class="w">  </span><span class="c1"># InfluxDB</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.178.0/24<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">1880</span><span class="w">  </span><span class="c1"># Node-RED</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.178.0/24<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">9000</span><span class="w">  </span><span class="c1"># Portainer</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.178.0/24<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">22</span><span class="w">    </span><span class="c1"># SSH</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+</code></pre></div>
+<p><strong>On Raspberry Pi:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Allow SSH only through Tailscale interface</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="k">in</span><span class="w"> </span>on<span class="w"> </span>tailscale0<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">22</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span>deny<span class="w"> </span><span class="m">22</span>/tcp
+sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+</code></pre></div>
+<p>Check status:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>status<span class="w"> </span>numbered
+</code></pre></div>
+<h2 id="cron-jobs">Cron Jobs<a class="headerlink" href="#cron-jobs" title="Permanent link">&para;</a></h2>
+<h3 id="automated-backups">Automated Backups<a class="headerlink" href="#automated-backups" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> User crontab (<code>crontab -e</code>)</p>
+<div class="highlight"><pre><span></span><code># Daily backup at 2 AM
+0 2 * * * cd ~/IOTstack &amp;&amp; ./scripts/backup.sh
+
+# Weekly cleanup at 3 AM Sunday
+0 3 * * 0 docker system prune -f
+
+# Daily offsite sync at 4 AM
+0 4 * * * rclone sync ~/IOTstack/backups/ remote:backups/
+</code></pre></div>
+<h2 id="influxdb-configuration">InfluxDB Configuration<a class="headerlink" href="#influxdb-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="create-database">Create Database<a class="headerlink" href="#create-database" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="s2">&quot;CREATE DATABASE iot_data&quot;</span>
+</code></pre></div>
+<h3 id="retention-policy">Retention Policy<a class="headerlink" href="#retention-policy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;CREATE RETENTION POLICY 90_days ON iot_data DURATION 90d REPLICATION 1 DEFAULT&quot;</span>
+</code></pre></div>
+<h3 id="show-configuration">Show Configuration<a class="headerlink" href="#show-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="s2">&quot;SHOW DATABASES&quot;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>influxdb<span class="w"> </span>influx<span class="w"> </span>-execute<span class="w"> </span><span class="s2">&quot;SHOW RETENTION POLICIES ON iot_data&quot;</span>
+</code></pre></div>
+<h2 id="environment-variables-summary">Environment Variables Summary<a class="headerlink" href="#environment-variables-summary" title="Permanent link">&para;</a></h2>
+<h3 id="grafana">Grafana<a class="headerlink" href="#grafana" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GF_SERVER_DOMAIN</td>
+<td>192.168.178.164</td>
+<td>Server address</td>
+</tr>
+<tr>
+<td>GF_SERVER_ROOT_URL</td>
+<td>http://192.168.178.164:3000/</td>
+<td>Base URL</td>
+</tr>
+<tr>
+<td>GF_RENDERING_SERVER_URL</td>
+<td>http://grafana-image-renderer:8081/render</td>
+<td>Renderer endpoint</td>
+</tr>
+<tr>
+<td>GF_RENDERING_CALLBACK_URL</td>
+<td>http://192.168.178.164:3000/</td>
+<td>Callback for renderer</td>
+</tr>
+<tr>
+<td>GF_RENDERING_RENDERER_TOKEN</td>
+<td>glsa_...</td>
+<td>Auth token</td>
+</tr>
+</tbody>
+</table>
+<h3 id="grafana-image-renderer">Grafana Image Renderer<a class="headerlink" href="#grafana-image-renderer" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AUTH_TOKEN</td>
+<td>glsa_...</td>
+<td>Must match Grafana token</td>
+</tr>
+<tr>
+<td>HTTP_HOST</td>
+<td>0.0.0.0</td>
+<td>Listen on all interfaces</td>
+</tr>
+<tr>
+<td>HTTP_PORT</td>
+<td>8081</td>
+<td>Service port</td>
+</tr>
+<tr>
+<td>BROWSER_TZ</td>
+<td>Europe/Amsterdam</td>
+<td>Timezone for rendering</td>
+</tr>
+</tbody>
+</table>
+<h3 id="node-red">Node-RED<a class="headerlink" href="#node-red" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TZ</td>
+<td>Europe/Amsterdam</td>
+<td>Timezone</td>
+</tr>
+<tr>
+<td>NODE_RED_CREDENTIAL_SECRET</td>
+<td>(optional)</td>
+<td>Encrypt credentials</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tailscale">Tailscale<a class="headerlink" href="#tailscale" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TS_AUTHKEY</td>
+<td>(optional)</td>
+<td>Auth key for unattended setup</td>
+</tr>
+<tr>
+<td>TS_STATE_DIR</td>
+<td>/var/lib/tailscale</td>
+<td>State directory</td>
+</tr>
+<tr>
+<td>TS_EXTRA_ARGS</td>
+<td>--advertise-tags=tag:iotstack</td>
+<td>Additional arguments</td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-locations-reference">File Locations Reference<a class="headerlink" href="#file-locations-reference" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>File/Directory</th>
+<th>Location</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker Compose</td>
+<td><code>~/IOTstack/docker-compose.yml</code></td>
+<td>Stack definition</td>
+</tr>
+<tr>
+<td>InfluxDB data</td>
+<td><code>~/IOTstack/volumes/influxdb/data/</code></td>
+<td>Database storage</td>
+</tr>
+<tr>
+<td>Grafana data</td>
+<td><code>~/IOTstack/volumes/grafana/data/</code></td>
+<td>Dashboards, config</td>
+</tr>
+<tr>
+<td>Node-RED flows</td>
+<td><code>~/IOTstack/volumes/nodered/data/flows.json</code></td>
+<td>Flow definitions</td>
+</tr>
+<tr>
+<td>Node-RED settings</td>
+<td><code>~/IOTstack/volumes/nodered/data/settings.js</code></td>
+<td>Configuration</td>
+</tr>
+<tr>
+<td>Tailscale state</td>
+<td><code>~/IOTstack/volumes/tailscale/state/</code></td>
+<td>Tailscale configuration</td>
+</tr>
+<tr>
+<td>Backups</td>
+<td><code>~/IOTstack/backups/</code></td>
+<td>Backup storage</td>
+</tr>
+<tr>
+<td>Pi scripts</td>
+<td><code>/home/hrtech/*.sh</code></td>
+<td>Shell scripts</td>
+</tr>
+<tr>
+<td>Gadget script</td>
+<td><code>/usr/local/bin/gadget.sh</code></td>
+<td>USB gadget setup</td>
+</tr>
+<tr>
+<td>USB backing file</td>
+<td><code>/home/hrtech/drive.bin</code></td>
+<td>Mass storage image</td>
+</tr>
+<tr>
+<td>Incoming images</td>
+<td><code>/home/hrtech/incoming_images/</code></td>
+<td>From Node-RED</td>
+</tr>
+<tr>
+<td>Processed images</td>
+<td><code>/home/hrtech/eink_usb/SAMSUNG_E-Paper/</code></td>
+<td>Ready for display</td>
+</tr>
+</tbody>
+</table>
+<h2 id="default-ports">Default Ports<a class="headerlink" href="#default-ports" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Port</th>
+<th>Protocol</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grafana</td>
+<td>3000</td>
+<td>HTTP</td>
+<td>Web UI</td>
+</tr>
+<tr>
+<td>InfluxDB</td>
+<td>8086</td>
+<td>HTTP</td>
+<td>API</td>
+</tr>
+<tr>
+<td>Node-RED</td>
+<td>1880</td>
+<td>HTTP</td>
+<td>Web UI</td>
+</tr>
+<tr>
+<td>Portainer</td>
+<td>9000</td>
+<td>HTTP</td>
+<td>Web UI</td>
+</tr>
+<tr>
+<td>Image Renderer</td>
+<td>8081</td>
+<td>HTTP</td>
+<td>Internal</td>
+</tr>
+<tr>
+<td>SSH</td>
+<td>22</td>
+<td>TCP</td>
+<td>Terminal</td>
+</tr>
+<tr>
+<td>PoE+</td>
+<td>N/A</td>
+<td>Ethernet</td>
+<td>Power</td>
+</tr>
+</tbody>
+</table>
+<h2 id="api-credentials">API Credentials<a class="headerlink" href="#api-credentials" title="Permanent link">&para;</a></h2>
+<h3 id="egauge-xml-api">eGauge XML API<a class="headerlink" href="#egauge-xml-api" title="Permanent link">&para;</a></h3>
+<p><strong>Endpoint:</strong> <code>https://egauge84432.egaug.es/cgi-bin/egauge?inst</code></p>
+<p><strong>Authentication:</strong> Digest Auth
+- <strong>Username:</strong> <code>HR_RDM</code>
+- <strong>Password:</strong> (contact system administrator)</p>
+<p><strong>Register Types:</strong></p>
+<p>The eGauge XML API returns instantaneous values for various register types. According to the eGauge XML API documentation, the main register types include:</p>
+<ul>
+<li><strong>Power registers</strong> (e.g., <code>S6_*</code>, <code>S5_*</code>, <code>S2_*</code>): Grid power measurements in watts</li>
+<li><strong>Orientation registers</strong> (e.g., <code>IM_*</code>): Turbine orientation and position data</li>
+<li><strong>Vibration registers</strong> (e.g., <code>VM_*</code>): Vibration monitoring sensors</li>
+<li><strong>Frequency registers</strong>: Grid and generator frequency in Hz</li>
+<li><strong>Voltage registers</strong>: Line voltage measurements</li>
+</ul>
+<p>The Node-RED flow sanitizes these register names by converting them to snake_case and adding appropriate prefixes (e.g., <code>grid_</code>, <code>orientation_</code>, <code>vibration_</code>).</p>
+<p><strong>Response Format:</strong> XML containing register values with metadata</p>
+<p><strong>Documentation:</strong> See <code>egauge-xml-api.pdf</code> in project root for complete register type specifications and data structures.</p>
+<h3 id="weather-api">Weather API<a class="headerlink" href="#weather-api" title="Permanent link">&para;</a></h3>
+<p><strong>Endpoint:</strong> <code>https://weerlive.nl/api/weerlive_api_v2.php</code></p>
+<p><strong>Authentication:</strong> API Key
+- <strong>Key:</strong> <code>3c2224ecab</code>
+- <strong>Location:</strong> <code>51.89908,4.42348</code> (Rotterdam coordinates)</p>
+<p><strong>No additional authentication required</strong> - API key is passed as URL parameter.</p>
+<h2 id="quick-reference-commands">Quick Reference Commands<a class="headerlink" href="#quick-reference-commands" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Start all services</span>
+<span class="nb">cd</span><span class="w"> </span>~/IOTstack<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+
+<span class="c1"># Stop all services</span>
+<span class="nb">cd</span><span class="w"> </span>~/IOTstack<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>down
+
+<span class="c1"># View logs</span>
+docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>&lt;service&gt;
+
+<span class="c1"># Restart service</span>
+docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>&lt;service&gt;
+
+<span class="c1"># Backup</span>
+<span class="nb">cd</span><span class="w"> </span>~/IOTstack<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./scripts/backup.sh
+
+<span class="c1"># InfluxDB CLI</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>influxdb<span class="w"> </span>influx
+
+<span class="c1"># Check gadget status</span>
+cat<span class="w"> </span>/sys/kernel/config/usb_gadget/EInkGadget/UDC
+
+<span class="c1"># SSH to Pi (via Tailscale)</span>
+ssh<span class="w"> </span>hrtech@&lt;pi-tailscale-ip&gt;<span class="w">  </span><span class="c1"># e.g., ssh hrtech@100.64.1.5</span>
+
+<span class="c1"># Trigger refresh (via Tailscale)</span>
+ssh<span class="w"> </span>hrtech@&lt;pi-tailscale-ip&gt;<span class="w"> </span><span class="s1">&#39;/home/hrtech/refresh_script.sh&#39;</span>
+
+<span class="c1"># Check Tailscale status</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>tailscale<span class="w"> </span>tailscale<span class="w"> </span>status<span class="w">  </span><span class="c1"># On VM (if Docker)</span>
+sudo<span class="w"> </span>tailscale<span class="w"> </span>status<span class="w">  </span><span class="c1"># On Pi or VM (if native)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
